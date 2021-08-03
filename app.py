@@ -18,8 +18,8 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/home")
-def  ():
-    home = list(mongo.db.tasks.find())
+def  home():
+    home = list(mongo.db.dishes.find())
     return render_template("home.html", home=home)
 
 
