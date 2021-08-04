@@ -20,8 +20,13 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/home")
 def home():
+    return render_template("home.html")
+
+
+@app.route("/dishes")
+def dishes():
     course = mongo.db.dish.find()
-    return render_template("home.html", dishes=course)
+    return render_template("dishes.html", dishes=course)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -32,7 +37,7 @@ def register():
 
         if existing:
             flash("Username not available")
-            redirect(url_for("register"))
+            return redirect(url_for("register"))
 
         new_user = {
             "first_name": request.form.get("first_name").lower(),
@@ -47,6 +52,11 @@ def register():
         session["user_cookie"] = request.form.get("user_name").lower()
         flash("Registration Successfull")
     return render_template("register.html")
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 
 if __name__ == "__main__":

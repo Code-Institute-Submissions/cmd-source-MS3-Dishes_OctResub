@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+
+    {% block content %} 
+
+        <h3 class="center-align">Welcome to Cookbook!</h3>
+
+        <div class="container signin">
+        <form class="card-panel center-align">
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="user_name" name="user_name" type="text" class="validate">
+                <label for="user_name">Username</label>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="user_password" type="password" name="user_password" class="validate">
+                  <label for="user_password">Password</label>
+                </div>
+              </div>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="far fa-share-square"></i>
+                </button>
+              <div>
+                  <p>Not a member yet?<a href="{{ url_for('register') }}"> Sign Up</a></p>
+              </div>
+        </form>
+      </div>
+
+
+{% endblock %}
