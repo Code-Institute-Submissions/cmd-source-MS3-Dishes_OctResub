@@ -8,7 +8,6 @@ if os.path.exists("env.py"):
     import env
 
 
-
 app = Flask(__name__)
 # The authentication config vars were taken from the PythonMiniProject
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -28,8 +27,8 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
-        existing = mongo.db.users.find_one(
-            {"user_name": request.form.get("user_name").lower})
+        existing = mongo.db.dish_users.find_one(
+            {"user_name": request.form.get("user_name").lower()})
 
         if existing:
             flash("Username not available")
@@ -39,14 +38,14 @@ def register():
             "first_name": request.form.get("first_name").lower(),
             "last_name":  request.form.get("last_name").lower(),
             "user_name":  request.form.get("user_name").lower(),
-            "user_password":  request.form.get("user_password").lower(),
+            "user_password": generate_password_hash(request.form.get(
+                "user_password").lower()),
             "user_email":  request.form.get("user_email").lower(),
         }
-        mongo.db.users.insert_one(new_user)
+        mongo.db.dish_users.insert_one(new_user)
 
         session["user_cookie"] = request.form.get("user_name").lower()
-
-
+        flash("Registration Successfull")
     return render_template("register.html")
 
 
