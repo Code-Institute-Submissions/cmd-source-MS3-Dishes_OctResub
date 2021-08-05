@@ -70,6 +70,11 @@ def login():
 def profile(user):
     return render_template("profile.html", user=user)
 
+
+@app.route("/newdish", methods=["GET", "POST"])
+def newdish():
+    return render_template("newdish.html")
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

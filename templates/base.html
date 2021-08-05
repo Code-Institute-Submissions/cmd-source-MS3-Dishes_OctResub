@@ -21,7 +21,7 @@
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('profile') }}">Profile</a></li>
             <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
-            <li><a href="collapsible.html">Add Your Dish</a></li>
+            <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
             <li><a href="{{ url_for('register') }}">Join</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
           </ul>
@@ -30,8 +30,9 @@
     
       <ul class="sidenav" id="mobile-demo">
         <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
         <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
-        <li><a href="collapsible.html">Add Your Dish</a></li>
+        <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
         <li><a href="{{ url_for('register') }}">Join</a></li>
         <li><a href="{{ url_for('login') }}">Login</a></li>
       </ul>

@@ -1,0 +1,10 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+    {% for dish in dishes %}
+        {{ dish.dish_name }}<br>
+        {{ dish.dish_type }}<br>
+        {{ dish.dish_description }}<br>
+    {% endfor %}
+
+{% endblock %}
