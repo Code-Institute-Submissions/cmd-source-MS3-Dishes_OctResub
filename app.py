@@ -50,7 +50,6 @@ def register():
         mongo.db.dish_users.insert_one(new_user)
 
         session["user_cookie"] = request.form.get("user_name").lower()
-        flash("Registration Successfull")
     return render_template("register.html")
 
 
@@ -61,11 +60,15 @@ def login():
         password = request.form.get("user_password")
         user = mongo.db.dish_users.find_one({"user_name": username})
         if user and check_password_hash(user["user_password"], password):
-            flash("login successful")
+            flash("Welcome")
         else:
             flash("incorrect password/username")
     return render_template("login.html")
 
+
+@app.route("/profile/", methods=["GET", "POST"])
+def profile(user):
+    return render_template("profile.html", user=user)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
