@@ -1,10 +1,17 @@
 {% extends "base.html" %} 
 
 {% block content %} 
-    {% for dish in dishes %}
-        {{ dish.dish_name }}<br>
-        {{ dish.dish_type }}<br>
-        {{ dish.dish_description }}<br>
-    {% endfor %}
+    <div class="container">
+        <h3 class="center-align">Tell Us Your New Dish...</h3>
+        <form method="POST" class="center-align">
+            <input type="text" name="type" placeholder="Type" id="type">
+            <input type="text" name="dish" placeholder="Dish" id="dish">
+            <input type="text" name="description" placeholder="Description" id="description">
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="far fa-share-square"></i>
+            </button>
+        </form>
+    </div>  
 
 {% endblock %}
