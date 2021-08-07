@@ -12,7 +12,7 @@
 <!--A table showing the list of available dishes, structure for this was taken from https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=1178s-->
 {% block dish %}
     <div class = "dishmain container">
-        <h3 class="center-align">Check Out Our List Of Dishes...<a href="#">Or Add Your Own</a></h3>
+        <h3 class="center-align">Check Out Our List Of Dishes...<a href="{{ url_for('newdish') }}">Or Add Your Own</a></h3>
             <table>
                 <tr>
                     <th class="center-align">Type</th>

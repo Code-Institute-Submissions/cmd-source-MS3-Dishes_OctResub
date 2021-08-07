@@ -73,7 +73,11 @@ def profile(user):
 
 @app.route("/newdish", methods=["GET", "POST"])
 def newdish():
+    if request.method == "POST":
+        new_dish = request.form['dish']
+        add_dish = Todo(content = new_dish)
     return render_template("newdish.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
