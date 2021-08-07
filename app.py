@@ -67,8 +67,13 @@ def login():
 
 
 @app.route("/profile/", methods=["GET", "POST"])
-def profile(user):
-    return render_template("profile.html", user=user)
+def profile():
+    return render_template("profile.html")
+
+
+@app.route("/utensils")
+def utensils():
+    return render_template("utensils.html")
 
 
 @app.route("/newdish", methods=["GET", "POST"])
