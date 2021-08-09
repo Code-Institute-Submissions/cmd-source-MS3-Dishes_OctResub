@@ -75,7 +75,18 @@ def login():
 def profile(username):
     username = mongo.db.dish_users.find_one(
         {"user_name": session['user_cookie']})["user_name"]
-    return render_template("profile.html", username=username)
+
+    first = mongo.db.dish_users.find_one(
+        {"user_name": session['user_cookie']})["first_name"]
+
+    last = mongo.db.dish_users.find_one(
+        {"user_name": session['user_cookie']})["last_name"]
+
+    email = mongo.db.dish_users.find_one(
+        {"user_name": session['user_cookie']})["user_email"]
+    
+    return render_template(
+        "profile.html", username=username, first=first, last=last, email=email)
 
 
 
