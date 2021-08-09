@@ -85,12 +85,17 @@ def profile(username):
     email = mongo.db.dish_users.find_one(
         {"user_name": session['user_cookie']})["user_email"]
     
-    return render_template(
-        "profile.html", username=username, first=first, last=last, email=email)
+    if session['user_cookie']:
+        return render_template(
+            "profile.html", username=username, first=first, last=last, email=email)
+    return redirect(url_for("login"))
 
 
-
-
+@app.route("/logout")
+def logout():
+    flash("You have been logged out")
+    session.pop("user_cookie")
+    return redirect(url_for("login"))
 
 @app.route("/utensils")
 def utensils():

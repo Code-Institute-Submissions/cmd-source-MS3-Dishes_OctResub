@@ -23,24 +23,32 @@
           <ul class="right hide-on-med-and-down">
           
             <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
+            {% if session.user_cookie %}
             <li><a href="{{ url_for('profile', username=session['user_cookie']) }}">Profile</a></li>
             <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
             <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
-            <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
             <li><a href="{{ url_for('register') }}">Join</a></li>
             <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
           </ul>
         </div>
       </nav>
     
       <ul class="sidenav" id="mobile-demo">
         <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
+        {% if session.user_cookie %}
         <li><a href="{{ url_for('profile', username=session['user_cookie']) }}">Profile</a></li>
         <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
         <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
-        <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% else %}
         <li><a href="{{ url_for('register') }}">Join</a></li>
         <li><a href="{{ url_for('login') }}">Login</a></li>
+        {% endif %}
       </ul>
 </header>
 
