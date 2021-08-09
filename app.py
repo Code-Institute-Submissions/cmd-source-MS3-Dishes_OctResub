@@ -49,8 +49,11 @@ def register():
         }
         mongo.db.dish_users.insert_one(new_user)
 
-        session["user_cookie"] = request.form.get("user_name").lower()
+        session['user_cookie'] = request.form.get("user_name").lower()
     return render_template("register.html")
+
+
+
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -60,15 +63,22 @@ def login():
         password = request.form.get("user_password")
         user = mongo.db.dish_users.find_one({"user_name": username})
         if user and check_password_hash(user["user_password"], password):
-            flash("Welcome")
+            flash("Welcome, {}".format(request.form.get("user_name")))
+            session['user_cookie'] = request.form.get("user_name").lower()
+            return redirect(url_for("profile", username=session['user_cookie']))
         else:
             flash("incorrect password/username")
     return render_template("login.html")
 
 
-@app.route("/profile/", methods=["GET", "POST"])
-def profile():
-    return render_template("profile.html")
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.dish_users.find_one(
+        {"user_name": session['user_cookie']})["user_name"]
+    return render_template("profile.html", username=username)
+
+
+
 
 
 @app.route("/utensils")
