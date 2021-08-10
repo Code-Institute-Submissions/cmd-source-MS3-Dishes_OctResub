@@ -16,19 +16,19 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-
+#Renders the homepage for Cookbook
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html")
 
-
+#Renders the available dishes for Cookbook from MongoDB
 @app.route("/dishes")
 def dishes():
     course = mongo.db.dish.find()
     return render_template("dishes.html", dishes=course)
 
-
+#Renders the registration page page and checks to see if a user already exists before adding a new user
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -52,10 +52,7 @@ def register():
         session['user_cookie'] = request.form.get("user_name").lower()
     return render_template("register.html")
 
-
-
-
-
+#Renders the login page and checks to see if the username and password are correct
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -70,7 +67,7 @@ def login():
             flash("incorrect password/username")
     return render_template("login.html")
 
-
+#Renders the profile page for some basic info of the user
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.dish_users.find_one(
@@ -90,18 +87,19 @@ def profile(username):
             "profile.html", username=username, first=first, last=last, email=email)
     return redirect(url_for("login"))
 
-
+#Logs the user out by removing the session cookie
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user_cookie")
     return redirect(url_for("login"))
 
+#Renders cooking utensils page where the owner sells their products
 @app.route("/utensils")
 def utensils():
     return render_template("utensils.html")
 
-
+#Renders the page for adding dishes to the selection of recipes available
 @app.route("/newdish", methods=["GET", "POST"])
 def newdish():
     if request.method == "POST":
