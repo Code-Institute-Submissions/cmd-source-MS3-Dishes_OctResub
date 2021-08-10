@@ -22,7 +22,12 @@ div h6 {
 
 }
 
-
 .signin {
     padding-top: 150px;
+}
+
+.gallery {
+    width: 240px;
+    height:180px;
+
 }
