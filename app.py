@@ -104,10 +104,8 @@ def utensils():
 
 @app.route("/newdish", methods=["GET", "POST"])
 def newdish():
-    if request.method == "POST":
-        new_dish = request.form['dish']
-        add_dish = Todo(content = new_dish)
-    return render_template("newdish.html")
+    new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
+    return render_template("newdish.html", dishes=new_dish)
 
 
 if __name__ == "__main__":
