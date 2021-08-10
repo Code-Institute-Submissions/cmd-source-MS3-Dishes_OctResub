@@ -1,16 +1,7 @@
 {% extends "base.html" %} 
 
-{% block content %} 
-    {% for dish in dishes %}
-        {{ dish.dish_name }}<br>
-        {{ dish.dish_type }}<br>
-        {{ dish.dish_description }}<br>
-    {% endfor %}
-
-{% endblock %}
-
 <!--A table showing the list of available dishes, structure for this was taken from https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=1178s-->
-{% block dish %}
+{% block content %}
     <div class = "dishmain container">
         <h3 class="center-align">Check Out Our List Of Dishes...<a href="{{ url_for('newdish') }}">Or Add Your Own</a></h3>
             <table>
@@ -19,16 +10,13 @@
                     <th class="center-align">Dish</th>
                     <th class="center-align">Description</th>
                 </tr>
+                {% for dish in dishes %}
                 <tr>
-                    <td class="center-align">Chineese</td>
-                    <td class="center-align">Curry</td>
-                    <td class="center-align">This is how you make a curry</td>
+                    <td class="center-align">{{ dish.dish_type }}</td>
+                    <td class="center-align">{{ dish.dish_name }}</td>
+                    <td class="center-align">{{ dish.dish_description }}</td>
                 </tr>
-                <tr>
-                    <td class="center-align">Chineese</td>
-                    <td class="center-align">Curry</td>
-                    <td class="center-align">This is how you make a curry</td>
-                </tr>
+                {% endfor %}
             </table>
     </div>
 {% endblock %}
