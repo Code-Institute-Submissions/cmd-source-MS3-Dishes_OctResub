@@ -104,6 +104,15 @@ def utensils():
 
 @app.route("/newdish", methods=["GET", "POST"])
 def newdish():
+    if request.method == "POST":
+        add_dish = {
+            "dish_name": request.form.get("dish"),
+            "dish_type": request.form.get("dish_type_name"),
+            "dish_description": request.form.get("description")
+        }
+        mongo.db.dish.insert_one(add_dish)
+        flash("Your dish was added")
+        return redirect(url_for("dishes"))
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
     return render_template("newdish.html", dishes=new_dish)
 
