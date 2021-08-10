@@ -1,23 +1,37 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 <!--A table showing the list of available dishes, structure for this was taken from https://www.youtube.com/watch?v=Z1RJmh_OqeA&t=1178s-->
 {% block content %}
-    <div class = "dishmain container">
-        <h3 class="center-align">Check Out Our List Of Dishes...<a href="{{ url_for('newdish') }}">Or Add Your Own</a></h3>
-            <table>
-                <tr>
-                    <th class="center-align">Type</th>
-                    <th class="center-align">Dish</th>
-                    <th class="center-align">Description</th>
-                </tr>
-                {% for dish in dishes %}
-                <tr>
-                    <td class="center-align">{{ dish.dish_type }}</td>
-                    <td class="center-align">{{ dish.dish_name }}</td>
-                    <td class="center-align">{{ dish.dish_description }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+<div class="dishmain container">
+    <h3 class="center-align">Check Out Our List Of Dishes...<a href="{{ url_for('newdish') }}">Or Add Your Own</a></h3>
+    <div class="row">
+        <form method="POST" action="{{url_for('searchdishes')}}" class="col s12 m12 l12">
+            <div class="card blue-grey darken-1">
+                <div class="input-field card-content white-text">
+                    <span class="card-title">Search your favourite dishes</span>
+                    <label for="search"></label>
+                    <div>
+                        <a class="light-red btn right" href="{{ url_for('dishes') }}">Clear</a>
+                        <button type="submit" class="light-green btn right">Search</button>
+                    </div>
+                    <input type="text" name="search" id="name" class="validate">
+                </div>
+            </div>
+        </form>
     </div>
+    <table>
+        <tr>
+            <th class="center-align">Type</th>
+            <th class="center-align">Dish</th>
+            <th class="center-align">Description</th>
+        </tr>
+        {% for dish in dishes %}
+        <tr>
+            <td class="center-align">{{ dish.dish_type }}</td>
+            <td class="center-align">{{ dish.dish_name }}</td>
+            <td class="center-align">{{ dish.dish_description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 {% endblock %}
-

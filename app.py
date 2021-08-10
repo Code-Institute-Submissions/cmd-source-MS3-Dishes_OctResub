@@ -28,6 +28,14 @@ def dishes():
     course = mongo.db.dish.find()
     return render_template("dishes.html", dishes=course)
 
+#Searches the available dishes in the DB
+@app.route("/searchdishes", methods=["GET", "POST"])
+def searchdishes():
+    search = request.form.get("search")
+    course = mongo.db.dish.find({"$text": {"$search": search}})
+    return render_template("dishes.html", dishes=course)
+
+
 #Renders the registration page page and checks to see if a user already exists before adding a new user
 @app.route("/register", methods=["GET", "POST"])
 def register():
