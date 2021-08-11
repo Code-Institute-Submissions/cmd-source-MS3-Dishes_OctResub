@@ -125,6 +125,15 @@ def newdish():
 #Renders the page for editing dishes
 @app.route("/update_dish/<dish_id>", methods=["POST", "GET"])
 def update_dish(dish_id):
+    if request.method == "POST":
+        update_dish = {
+            "dish_name": request.form.get("dish"),
+            "dish_type": request.form.get("dish_type_name"),
+            "dish_description": request.form.get("description")
+        }
+        mongo.db.dish.update({"_id": ObjectId(dish_id)}, update_dish)
+        flash("Your dish was updated")
+
     dish = mongo.db.dish.find_one({"_id": ObjectId(dish_id)})
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
     return render_template("update_dish.html",dish=dish, dishes=new_dish)
