@@ -138,6 +138,12 @@ def update_dish(dish_id):
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
     return render_template("update_dish.html",dish=dish, dishes=new_dish)
 
+#Deletes a selected recipe and returns the user to the dishes page
+@app.route("/delete_dish/<dish_id>", methods=["POST", "GET"])
+def delete_dish(dish_id):
+    mongo.db.dish.remove({"_id": ObjectId(dish_id)})
+    flash("The selected dish was deleted")
+    return redirect(url_for('dishes'))
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
