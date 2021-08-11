@@ -12,6 +12,8 @@
                     <label for="search"></label>
                     <div>
                         <a class="light-red btn right" href="{{ url_for('dishes') }}">Clear</a>
+                    </div>
+                    <div>
                         <button type="submit" class="light-green btn right">Search</button>
                     </div>
                     <input type="text" name="search" id="name" class="validate">
@@ -19,17 +21,21 @@
             </div>
         </form>
     </div>
-    <table>
+    <table class="card-panel">
         <tr>
             <th class="center-align">Type</th>
             <th class="center-align">Dish</th>
             <th class="center-align">Description</th>
+            <th class="center-align">Update</th>
+            <th class="center-align">Delete</th>
         </tr>
         {% for dish in dishes %}
         <tr>
             <td class="center-align">{{ dish.dish_type }}</td>
             <td class="center-align">{{ dish.dish_name }}</td>
             <td class="center-align">{{ dish.dish_description }}</td>
+            <td class="center-align"><a href="#" class="green btn">Update</a></td>
+            <td class="center-align"><a href="#" class="red btn">Delete</a></td>
         </tr>
         {% endfor %}
     </table>
