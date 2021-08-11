@@ -122,6 +122,13 @@ def newdish():
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
     return render_template("newdish.html", dishes=new_dish)
 
+#Renders the page for editing dishes
+@app.route("/update_dish/<dish_id>", methods=["POST", "GET"])
+def update_dish(dish_id):
+    dish = mongo.db.dish.find_one({"_id": ObjectId(dish_id)})
+    new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
+    return render_template("update_dish.html",dish=dish, dishes=new_dish)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

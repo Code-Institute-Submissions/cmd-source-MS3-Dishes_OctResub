@@ -34,7 +34,7 @@
             <td class="center-align">{{ dish.dish_type }}</td>
             <td class="center-align">{{ dish.dish_name }}</td>
             <td class="center-align">{{ dish.dish_description }}</td>
-            <td class="center-align"><a href="#" class="green btn">Update</a></td>
+            <td class="center-align"><a href="{{url_for('update_dish', dish_id=dish._id)}}" class="green btn">Update</a></td>
             <td class="center-align"><a href="#" class="red btn">Delete</a></td>
         </tr>
         {% endfor %}
