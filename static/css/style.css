@@ -1,4 +1,6 @@
-
+body {
+    background-color: rgb(239, 239, 245);
+}
 
 #mainheading {
     text-align: center;
@@ -17,13 +19,17 @@ div h6 {
 }
 
 .homeimg {
-    width: 240px;
-    height:180px;
+    width: 280px;
+    height: 180px;
 
 }
 
 .signin {
     padding-top: 150px;
+}
+
+#carousel {
+    height: 250px;
 }
 
 .gallery {

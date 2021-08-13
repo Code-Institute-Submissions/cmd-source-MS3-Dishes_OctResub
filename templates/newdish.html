@@ -2,7 +2,8 @@
 
 {% block content %}
 <div class="container">
-    <h3 class="center-align">Tell Us Your New Dish...</h3>
+    <div class="card-panel">
+    <h3 class="center-align ">Tell Us Your New Dish...</h3>
     <form method="POST" class="center-align" action="{{ url_for('newdish') }}">
         <div class="input-field col s12">
             <select id="dish_type_name" name="dish_type_name">
@@ -24,6 +25,7 @@
             <i class="far fa-share-square"></i>
         </button>
     </form>
+    </div>
 </div>
 
 {% endblock %}

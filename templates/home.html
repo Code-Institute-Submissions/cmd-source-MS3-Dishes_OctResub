@@ -7,9 +7,10 @@
 {{ dish.dish_description }}<br>
 {% endfor %}
 
-<div class=container>
+<div class="container">
+  <div class="card-panel">
   <h4 id="mainheading">Cookbook <i class="fas fa-utensils"></i></h4>
-  <h6>Check out our range of cooking <a href="{{ url_for('utensils') }}">utensils</a></h6>
+  <h6>Check out our range of cooking utensils</h6>
 
   <div class="row">
     <div class="col s8 m6 s12 offset-m3">
@@ -23,8 +24,19 @@
       </div>
     </div>
   </div>
-</div>
 
+  <!--carousel taken from Materialize-->
+  <div class="carousel" id="carousel">
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/woodenutensils.png"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/bengali_cooking_tools.jpg"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/utensils.jpg"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/knives.jpg"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/kitchenknifeset.jpg"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/fullset.jpg"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/cutleryshiny.jpg"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/cutlerynew.jpg"></a>
+    <a class="carousel-item gallery" href="{{ url_for('utensils') }}"><img src="static/img/cutlery.jpg"></a>
+  </div>
 
 
 <div class="row center-align">
@@ -55,7 +67,8 @@
         final copy is available.
       </p>
   </div>
-
+</div>
+</div>
 </div>
 
 {% endblock %}
