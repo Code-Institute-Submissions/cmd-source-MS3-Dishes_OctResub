@@ -4,7 +4,7 @@
 
         <h3 class="center-align"> {{ username }}'s details </h3>
 
-        <div class="container signin">
+        <div class="container">
         <div class="card-panel center-align">
             <div class="row">
               <div class="input-field col s6">
@@ -22,6 +22,27 @@
                 </div>
             </div>
         </div>
+
+        <h5 class="card-panel center-align">The Recipies That You Have Added</h5>
+
+        <table class="card-panel">
+          <tr>
+              <th class="center-align">Type</th>
+              <th class="center-align">Dish</th>
+              <th class="center-align">Description</th>
+              <th class="center-align">Update</th>
+              <th class="center-align">Delete</th>
+          </tr>
+          {% for dish in dishes %}
+          <tr>
+              <td class="center-align">{{ dish.dish_type }}</td>
+              <td class="center-align">{{ dish.dish_name }}</td>
+              <td class="center-align">{{ dish.dish_description }}</td>
+              <td class="center-align"><a href="{{url_for('update_dish', dish_id=dish._id)}}" class="green btn">Update</a></td>
+              <td class="center-align"><a href="{{url_for('delete_dish', dish_id=dish._id)}}" class="red btn">Delete</a></td>
+          </tr>
+          {% endfor %}
+      </table>
 
 
 {% endblock %}

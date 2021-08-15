@@ -78,6 +78,7 @@ def login():
 #Renders the profile page for some basic info of the user
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    course = mongo.db.dish.find()
     username = mongo.db.dish_users.find_one(
         {"user_name": session['user_cookie']})["user_name"]
 
@@ -92,8 +93,9 @@ def profile(username):
     
     if session['user_cookie']:
         return render_template(
-            "profile.html", username=username, first=first, last=last, email=email)
+            "profile.html", username=username, first=first, last=last, email=email, dishes=course)
     return redirect(url_for("login"))
+
 
 #Logs the user out by removing the session cookie
 @app.route("/logout")
