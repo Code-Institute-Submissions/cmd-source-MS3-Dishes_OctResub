@@ -58,7 +58,7 @@ def register():
         mongo.db.dish_users.insert_one(new_user)
 
         session['user_cookie'] = request.form.get("user_name").lower()
-    return render_template("register.html")
+    return render_template("profile.html")
 
 #Renders the login page and checks to see if the username and password are correct
 @app.route("/login", methods=["GET", "POST"])
