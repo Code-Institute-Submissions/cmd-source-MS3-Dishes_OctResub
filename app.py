@@ -78,7 +78,9 @@ def login():
 #Renders the profile page for some basic info of the user
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+
     course = mongo.db.dish.find()
+
     username = mongo.db.dish_users.find_one(
         {"user_name": session['user_cookie']})["user_name"]
 
@@ -116,7 +118,8 @@ def newdish():
         add_dish = {
             "dish_name": request.form.get("dish"),
             "dish_type": request.form.get("dish_type_name"),
-            "dish_description": request.form.get("description")
+            "dish_description": request.form.get("description"),
+            "created_by": session['user_cookie']
         }
         mongo.db.dish.insert_one(add_dish)
         flash("Your dish was added")

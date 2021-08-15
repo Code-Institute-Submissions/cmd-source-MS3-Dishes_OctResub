@@ -33,7 +33,9 @@
               <th class="center-align">Update</th>
               <th class="center-align">Delete</th>
           </tr>
+          
           {% for dish in dishes %}
+          {% if dish.created_by == username %}
           <tr>
               <td class="center-align">{{ dish.dish_type }}</td>
               <td class="center-align">{{ dish.dish_name }}</td>
@@ -41,7 +43,9 @@
               <td class="center-align"><a href="{{url_for('update_dish', dish_id=dish._id)}}" class="green btn">Update</a></td>
               <td class="center-align"><a href="{{url_for('delete_dish', dish_id=dish._id)}}" class="red btn">Delete</a></td>
           </tr>
+          {% endif %}
           {% endfor %}
+          
       </table>
 
 
