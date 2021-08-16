@@ -1,6 +1,6 @@
 # Third Milestone Project - Dishes
 
-## Table Of Contents
+# Table Of Contents
 
 1. UX
 2. Features
@@ -11,7 +11,7 @@
 
 There are two goals for this website. The first is for external users to find and share recipes, the second is for the owners of the site to promote theire brean of cooking utensils.
 
-## UX
+# UX
 
 #### User Stories
 - As an external user coming to the site I want the following:
@@ -38,7 +38,36 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 ![Homepage](static/img/search.JPG)
 
 #### Design
+#### Styling 
+#### Images
 
+## Features
+- Navbar at the top of each page which collapses into a side-nav provides easy navigation around the site.
+- The homepage has a carousel that auto rotates through the cooking utensils to promote the owners brand.
+- The profile page allows users to update or delete any previous recipies they have added.
+- The "Add Your Dish" page allows users to create and add their own dishes to the website.
+- The "Add Your Dish" page allows users to search all the recipies that have been added to the site.
+- The "Join" page allows users to create their own registration details which are then stored on MongoDB and accessed once the user logs in.
+
+# Technologies Used
+
+- HTML5 for the website strcuture.
+
+- CSS3 for the websites appearence.
+
+- JQuery
+
+- Python3 
+
+- MongoDB
+
+# Testing
+
+## Homepage
+## Cooking Utensils
+## Profile
+## Dishes
+## Add Your Dish
 
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
 - https://www.pxfuel.com/en/free-photo-eleiv
