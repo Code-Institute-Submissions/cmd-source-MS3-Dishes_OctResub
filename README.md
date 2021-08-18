@@ -64,6 +64,7 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 # Testing
 
 ## Homepage
+<<<<<<< HEAD
 
 ![Home](static/img/desktop.PNG)
 
@@ -88,6 +89,57 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 ![add](static/img/add.PNG)
 
 ![addmobile](static/img/addmobile.PNG)
+=======
+#### Desktop
+Homepage works as intended on the desktop. The User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
+
+![deskhome](static/img/desktop.PNG)
+
+#### Mobile
+Homepage works as intended on the mobile. he User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
+
+![deskmobile](static/img/homemobile.PNG)
+
+## Cooking Utensils
+#### Desktop
+Displays as intended
+
+![deskUtensils](static/img/utensils.PNG)
+
+#### Mobile
+Displays as intended except for the LOGO at the top, needs to be centered on the Navbar.
+
+![mobileUtensils](static/img/utensilsmobile.PNG)
+
+## Profile
+#### Desktop
+Table needs to be corrected, its currently extending out to the left. Can be fixed with a multiline text input field.
+
+![deskprofile](static/img/profile.PNG)
+
+#### Mobile
+LOGO at the top needs to be centered on the Navbar. 
+Table needs to be corrected, its currently extending out to the left. Can be fixed with a multiline text input field.
+
+![mobileprofile](static/img/profilemobile.PNG)
+
+## Dishes
+#### Desktop
+As on the Profile page the table on the Dishes page needs to be corrected.
+
+![deskdishes](static/img/dishes.PNG)
+
+#### Mobile
+LOGO at the top needs to be centered on the Navbar. 
+As on the Profile page the table on the Dishes page needs to be corrected.
+
+![mobiledishes](static/img/dishesmobile.PNG)
+
+Table needs to be corrected
+## Add Your Dish
+#### Desktop
+
+>>>>>>> 31dae3464720c2b301a2a7c22a28e5de5b26efa4
 
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
 - https://www.pxfuel.com/en/free-photo-eleiv
