@@ -64,10 +64,30 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 # Testing
 
 ## Homepage
+
+![Home](static/img/desktop.PNG)
+
+![Homemobile](static/img/homemobile.PNG)
+
 ## Cooking Utensils
+![utensils](static/img/utensils.PNG)
+
+![utensilsmobile](static/img/utensilsmobile.PNG)
+
 ## Profile
+![profile](static/img/profile.PNG)
+
+![profilemobile](static/img/profilemobile.PNG)
+
 ## Dishes
+![dishes](static/img/dishes.PNG)
+
+![dishesmobile](static/img/dishesmobile.PNG)
+
 ## Add Your Dish
+![add](static/img/add.PNG)
+
+![addmobile](static/img/addmobile.PNG)
 
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
 - https://www.pxfuel.com/en/free-photo-eleiv

@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="container">
-    <h3 class="center-align">Update Your Dish</h3>
-    <form method="POST" class="center-align" action="{{ url_for('update_dish', dish_id=dish._id) }}">
+    <h3 class="card-panel center-align">Update Your Dish</h3>
+    <form method="POST" class="card-panel center-align" action="{{ url_for('update_dish', dish_id=dish._id) }}">
         <div class="input-field col s12">
             <select id="dish_type_name" name="dish_type_name">
                 <option value="" disabled selected>Choose your dish type</option>
