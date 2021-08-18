@@ -21,6 +21,7 @@
         </form>
     </div>
     <table class="card-panel">
+        <div class="container">
         <tr>
             <th class="center-align">Type</th>
             <th class="center-align">Dish</th>
@@ -30,9 +31,10 @@
         <tr>
             <td class="center-align">{{ dish.dish_type }}</td>
             <td class="center-align">{{ dish.dish_name }}</td>
-            <td class="center-align">{{ dish.dish_description }}</td>
+            <td class="center-align"><textarea disabled maxlength="500" id="" name="" rows="10" cols="150">{{ dish.dish_description }}</textarea></td>
         </tr>
         {% endfor %}
+    </div>
     </table>
 </div>
 {% endblock %}
