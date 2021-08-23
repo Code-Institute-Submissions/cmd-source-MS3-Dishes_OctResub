@@ -38,8 +38,23 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 ![Homepage](static/img/search.JPG)
 
 #### Design
+The overall design for this website is simple but effective for the websites goals. The homepage instantly highlights a weclome message to a new user to join or for existing users to log in. Underneath that there is a carousel which slowly rotates through the brand of cooking utensils, upon clicking on an image the user is redirected to the utensils page which has greater information.
+
+If the user wants to access the library of dishes to make they need to either log in or register. Once they do this they will get access to their profile, the sites recipies from other users and they will be able to add/update/delete their own recipes and dishes on the website.
+
+Throughout the website each form/table or center piece for that page is highlighted by a card panal which focuses the users attention. This provides for a good contrast between the background image and for a better user experience.
+
 #### Styling 
+
+The default font from materialize was kept as it seemed to provide a very easy to read style. -apple-system,BlinkMacSystemFont
+
 #### Images
+
+The background image was selected as it gave a perfect first impression for when a user first lands. It is instantly clear at first glance that this is a cooking related website.
+
+The 3 previous user review images were also selected to give a great first impression, they show the wholesome dishes that have been created in the past from other users. 
+
+The other images are the utensils. These were all selected to give a very clean and professional look. Thus promoting the brand Cookbook for the websites owners.
 
 ## Features
 - Navbar at the top of each page which collapses into a side-nav provides easy navigation around the site.
@@ -64,32 +79,6 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 # Testing
 
 ## Homepage
-<<<<<<< HEAD
-
-![Home](static/img/desktop.PNG)
-
-![Homemobile](static/img/homemobile.PNG)
-
-## Cooking Utensils
-![utensils](static/img/utensils.PNG)
-
-![utensilsmobile](static/img/utensilsmobile.PNG)
-
-## Profile
-![profile](static/img/profile.PNG)
-
-![profilemobile](static/img/profilemobile.PNG)
-
-## Dishes
-![dishes](static/img/dishes.PNG)
-
-![dishesmobile](static/img/dishesmobile.PNG)
-
-## Add Your Dish
-![add](static/img/add.PNG)
-
-![addmobile](static/img/addmobile.PNG)
-=======
 #### Desktop
 Homepage works as intended on the desktop. The User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
 
@@ -139,7 +128,6 @@ Table needs to be corrected
 ## Add Your Dish
 #### Desktop
 
->>>>>>> 31dae3464720c2b301a2a7c22a28e5de5b26efa4
 
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
 - https://www.pxfuel.com/en/free-photo-eleiv
