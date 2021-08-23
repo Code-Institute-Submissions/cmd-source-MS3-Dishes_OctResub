@@ -2,10 +2,9 @@
 
     {% block content %} 
 
-        <h3 class="center-align">Welcome {{ user }}</h3>
-
-        <div class="container signin">
+        <div class="container">
         <form class="card-panel center-align" method="POST">
+          <h3 class="center-align">Welcome {{ user }}</h3>
             <div class="row">
               <div class="input-field col s12">
                 <input id="user_name" name="user_name" type="text" class="validate">

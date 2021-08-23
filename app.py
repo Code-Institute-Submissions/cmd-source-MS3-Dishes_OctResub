@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template,redirect, request, session, url_for)
+    Flask, flash, render_template, redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -36,7 +36,7 @@ def searchdishes():
     return render_template("dishes.html", dishes=course)
 
 
-#Renders the registration page page and checks to see if a user already exists before adding a new user
+# Renders the registration page page and checks to see if a user already exists before adding a new user
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
