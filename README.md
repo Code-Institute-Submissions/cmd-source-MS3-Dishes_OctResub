@@ -85,7 +85,7 @@ Homepage works as intended on the desktop. The User lands on the page and everyt
 ![deskhome](static/img/desktop.PNG)
 
 #### Mobile
-Homepage works as intended on the mobile. he User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
+Homepage works as intended on the mobile. The User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
 
 ![deskmobile](static/img/homemobile.PNG)
 
@@ -97,6 +97,7 @@ Displays as intended
 
 #### Mobile
 Displays as intended except for the LOGO at the top, needs to be centered on the Navbar.
+This has since been corrected with some CSS padding.
 
 ![mobileUtensils](static/img/utensilsmobile.PNG)
 
@@ -107,14 +108,14 @@ Table needs to be corrected, its currently extending out to the left. Can be fix
 ![deskprofile](static/img/profile.PNG)
 
 #### Mobile
-LOGO at the top needs to be centered on the Navbar. 
+LOGO at the top needs to be centered on the Navbar. This has since been corrected with some CSS padding.
 Table needs to be corrected, its currently extending out to the left. Can be fixed with a multiline text input field.
 
 ![mobileprofile](static/img/profilemobile.PNG)
 
 ## Dishes
 #### Desktop
-As on the Profile page the table on the Dishes page needs to be corrected.
+As on the Profile page the table on the Dishes page needs to be corrected. This has since been corrected by swapping out the input field with a textarea input and limiting it inside a container class.
 
 ![deskdishes](static/img/dishes.PNG)
 
@@ -125,8 +126,16 @@ As on the Profile page the table on the Dishes page needs to be corrected.
 ![mobiledishes](static/img/dishesmobile.PNG)
 
 Table needs to be corrected
+
 ## Add Your Dish
+
 #### Desktop
+The dishes page works as expected on the desktop. No need for any chages
+![mobiledishes](static/img/add.PNG)
+
+#### Desktop
+The dishes page works as expected on the mobile. No need for any chages
+![mobiledishes](static/img/addmobile.PNG)
 
 
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
