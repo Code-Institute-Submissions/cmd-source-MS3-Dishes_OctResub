@@ -59,10 +59,14 @@ The other images are the utensils. These were all selected to give a very clean 
 ## Features
 - Navbar at the top of each page which collapses into a side-nav provides easy navigation around the site.
 - The homepage has a carousel that auto rotates through the cooking utensils to promote the owners brand.
+![carousel](static/img/carosel.PNG)
+
 - The profile page allows users to update or delete any previous recipies they have added.
 - The "Add Your Dish" page allows users to create and add their own dishes to the website.
 - The "Add Your Dish" page allows users to search all the recipies that have been added to the site.
 - The "Join" page allows users to create their own registration details which are then stored on MongoDB and accessed once the user logs in.
+- A custom 404 page will give a friendly display to the user if they look for a page that isnt on the site.
+![404](static/img/404page.PNG)
 
 # Technologies Used
 
@@ -91,9 +95,9 @@ Homepage works as intended on the mobile. The User lands on the page and everyth
 
 ## Cooking Utensils
 #### Desktop
-Displays as intended
+Displayed as intended when it had place holder text. However once I added in a proper description the formatted grid of the desktop was thrown off. I have fixed this for the moment by taking out the l4 class in the columns.
 
-![deskUtensils](static/img/utensils.PNG)
+![deskUtensils](static/img/utensilsdesk.PNG)
 
 #### Mobile
 Displays as intended except for the LOGO at the top, needs to be centered on the Navbar.
