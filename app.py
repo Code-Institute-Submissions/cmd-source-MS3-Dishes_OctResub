@@ -15,6 +15,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+#Custom 404 page which was inspired by https://www.youtube.com/watch?v=3O4ZmH5aolg
 @app.errorhandler(404)
 def error_404(e):
     return render_template('404.html'), 404
