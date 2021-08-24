@@ -138,6 +138,8 @@ The dishes page works as expected on the mobile. No need for any chages
 ![mobiledishes](static/img/addmobile.PNG)
 
 
+Credits
+
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
 - https://www.pxfuel.com/en/free-photo-eleiv
 - https://www.wallpaperflare.com/cooked-dish-on-white-plate-flat-lay-photography-of-cooked-food-with-coffees-wallpaper-zuewu
@@ -152,3 +154,7 @@ The dishes page works as expected on the mobile. No need for any chages
 - https://www.pxfuel.com/en/free-photo-erzod
 - https://www.piqsels.com/en/public-domain-photo-ftvfv
 
+
+Acknowledgements
+
+https://www.youtube.com/watch?v=3O4ZmH5aolg

@@ -7,7 +7,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
-
 app = Flask(__name__)
 # The authentication config vars were taken from the PythonMiniProject
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
@@ -15,6 +14,10 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+
+@app.errorhandler(404)
+def error_404(e):
+    return render_template('404.html'), 404
 
 #Renders the homepage for Cookbook
 @app.route("/")
@@ -58,7 +61,7 @@ def register():
         mongo.db.dish_users.insert_one(new_user)
 
         session['user_cookie'] = request.form.get("user_name").lower()
-    return render_template("register.html")
+    return rende_template("register.html")
 
 #Renders the login page and checks to see if the username and password are correct
 @app.route("/login", methods=["GET", "POST"])
