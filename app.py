@@ -38,7 +38,7 @@ def searchdishes():
     search = request.form.get("search")
     course = mongo.db.dish.find({"$text": {"$search": search}})
     return render_template("dishes.html", dishes=course)
-
+ 
 
 # Renders the registration page page and checks to see if a user already exists before adding a new user
 @app.route("/register", methods=["GET", "POST"])
@@ -62,7 +62,7 @@ def register():
         mongo.db.dish_users.insert_one(new_user)
 
         session['user_cookie'] = request.form.get("user_name").lower()
-    return rende_template("register.html")
+    return render_template("register.html")
 
 #Renders the login page and checks to see if the username and password are correct
 @app.route("/login", methods=["GET", "POST"])
@@ -82,8 +82,6 @@ def login():
 #Renders the profile page for some basic info of the user
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-
-    course = mongo.db.dish.find()
 
     username = mongo.db.dish_users.find_one(
         {"user_name": session['user_cookie']})["user_name"]
