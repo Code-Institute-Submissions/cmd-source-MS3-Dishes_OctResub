@@ -15,34 +15,44 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
-#Custom 404 page which was inspired by 
-#https://www.youtube.com/watch?v=3O4ZmH5aolg
+'''
+Custom 404 page which was inspired by
+https://www.youtube.com/watch?v=3O4ZmH5aolg
+'''
+
+
 @app.errorhandler(404)
 def error_404(e):
     return render_template('404.html'), 404
 
-#Renders the homepage for Cookbook
+
+# Renders the homepage for Cookbook
 @app.route("/")
 @app.route("/home")
 def home():
     return render_template("home.html")
 
-#Renders the available dishes for Cookbook from MongoDB
+
+# Renders the available dishes for Cookbook from MongoDB
 @app.route("/dishes")
 def dishes():
     course = mongo.db.dish.find()
     return render_template("dishes.html", dishes=course)
 
-#Searches the available dishes in the DB
+
+# Searches the available dishes in the DB
 @app.route("/searchdishes", methods=["GET", "POST"])
 def searchdishes():
     search = request.form.get("search")
     course = mongo.db.dish.find({"$text": {"$search": search}})
     return render_template("dishes.html", dishes=course)
- 
 
-# Renders the registration page page and checks to see 
-# if a user already exists before adding a new user
+'''
+Renders the registration page page and checks to see
+if a user already exists before adding a new user
+'''
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -66,8 +76,13 @@ def register():
         session['user_cookie'] = request.form.get("user_name").lower()
     return render_template("register.html")
 
-#Renders the login page and checks to see
-#  if the username and password are correct
+
+'''
+Renders the login page and checks to see
+if the username and password are correct
+'''
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -77,12 +92,16 @@ def login():
         if user and check_password_hash(user["user_password"], password):
             flash("Welcome, {}".format(request.form.get("user_name")))
             session['user_cookie'] = request.form.get("user_name").lower()
-            return redirect(url_for("profile", username=session['user_cookie']))
+            return redirect(url_for(
+                "profile", username=session['user_cookie']))
         else:
             flash("incorrect password/username")
     return render_template("login.html")
 
-#Renders the profile page for some basic info of the user
+
+# Renders the profile page for some basic info of the user
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
 
@@ -99,26 +118,33 @@ def profile(username):
 
     email = mongo.db.dish_users.find_one(
         {"user_name": session['user_cookie']})["user_email"]
-    
+
     if session['user_cookie']:
         return render_template(
-            "profile.html", username=username, first=first, last=last, email=email, dishes=course)
+            "profile.html", username=username, first=first,
+            last=last, email=email, dishes=course)
     return redirect(url_for("login"))
 
 
-#Logs the user out by removing the session cookie
+# Logs the user out by removing the session cookie
+
+
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user_cookie")
     return redirect(url_for("login"))
 
-#Renders cooking utensils page where the owner sells their products
+# Renders cooking utensils page where the owner sells their products
+
+
 @app.route("/utensils")
 def utensils():
     return render_template("utensils.html")
 
-#Renders the page for adding dishes to the selection of recipes available
+# Renders the page for adding dishes to the selection of recipes available
+
+
 @app.route("/newdish", methods=["GET", "POST"])
 def newdish():
     if request.method == "POST":
@@ -134,7 +160,9 @@ def newdish():
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
     return render_template("newdish.html", dishes=new_dish)
 
-#Renders the page for editing dishes
+# Renders the page for editing dishes
+
+
 @app.route("/update_dish/<dish_id>", methods=["POST", "GET"])
 def update_dish(dish_id):
     if request.method == "POST":
@@ -148,9 +176,11 @@ def update_dish(dish_id):
 
     dish = mongo.db.dish.find_one({"_id": ObjectId(dish_id)})
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
-    return render_template("update_dish.html",dish=dish, dishes=new_dish)
+    return render_template("update_dish.html", dish=dish, dishes=new_dish)
 
-#Deletes a selected recipe and returns the user to the dishes page
+# Deletes a selected recipe and returns the user to the dishes page
+
+
 @app.route("/delete_dish/<dish_id>", methods=["POST", "GET"])
 def delete_dish(dish_id):
     mongo.db.dish.remove({"_id": ObjectId(dish_id)})

@@ -11,12 +11,8 @@ div h5, h6 {
     text-align: center;
 }
 
-#maincard {
-    text-align: center;
-}
-
-#logo {
-    padding: 10px;
+#carousel {
+    height: 250px;
 }
 
 .homeimg {
@@ -25,12 +21,16 @@ div h5, h6 {
 
 }
 
-.signin {
-    padding-top: 150px;
+#maincard {
+    text-align: center;
 }
 
-#carousel {
-    height: 250px;
+#logo {
+    padding: 10px;
+}
+
+.signin {
+    padding-top: 150px;
 }
 
 .gallery {

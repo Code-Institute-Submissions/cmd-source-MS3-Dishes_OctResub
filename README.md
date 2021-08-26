@@ -168,6 +168,25 @@ The custom 404 page works as intended for the mobile
 
 ![404mobile](static/img/404mobile.PNG)
 
+#### Testing On Different Devices:
+1. 24 inche dell monitor
+2. 16 inche lenovo laptop
+3. Galaxy S5
+4. Pixel 2
+5. iPhone 6/7 & 8
+6. iPhone X 
+7. iPad
+8. Galaxy Fold
+
+#### Testing with the HTML, CSS, Javascript and Python Validators
+
+![html](static/img/htmlvalidator.PNG)
+
+![html](static/img/cssvalidator.PNG)
+
+![html](static/img/jsvalidator.PNG)
+
+![html](static/img/pythonvalidator.PNG)
 
 Credits
 
