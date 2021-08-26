@@ -1,5 +1,7 @@
 # Third Milestone Project - Dishes
 
+![mockup](static/img/mockup.PNG)
+
 # Table Of Contents
 
 1. UX
@@ -9,7 +11,7 @@
 5. Deployment
 6. Credits and Acknowledgements
 
-There are two goals for this website. The first is for external users to find and share recipes, the second is for the owners of the site to promote theire brean of cooking utensils.
+There are two goals for this website. The first is for external users to find and share recipes, the second is for the owners of the site to promote their brand of cooking utensils.
 
 # UX
 
@@ -17,7 +19,7 @@ There are two goals for this website. The first is for external users to find an
 - As an external user coming to the site I want the following:
     - When I land on the homepage I want to see the experiences that others have had.
     - I want to be able to easily sign into my account, or if I dont have an account I want ease in registering.
-    - I want to be able to easily Navigate throughout the website.
+    - I want to be able to easily navigate throughout the website.
     - I want to be able to search for recipes that I am interested in.
     - I want to be able to add in my own recipes.
 
@@ -40,7 +42,7 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 #### Design
 The overall design for this website is simple but effective for the websites goals. The homepage instantly highlights a weclome message to a new user to join or for existing users to log in. Underneath that there is a carousel which slowly rotates through the brand of cooking utensils, upon clicking on an image the user is redirected to the utensils page which has greater information.
 
-If the user wants to access the library of dishes to make they need to either log in or register. Once they do this they will get access to their profile, the sites recipies from other users and they will be able to add/update/delete their own recipes and dishes on the website.
+If the user wants to access the library of dishes, they either need to log in or register. Once they do this they will get access to their profile, the sites recipies from other users and they will be able to add/update/delete their own recipes and dishes on the website.
 
 Throughout the website each form/table or center piece for that page is highlighted by a card panal which focuses the users attention. This provides for a good contrast between the background image and for a better user experience.
 
@@ -59,20 +61,31 @@ The other images are the utensils. These were all selected to give a very clean 
 ## Features
 - Navbar at the top of each page which collapses into a side-nav provides easy navigation around the site.
 - The homepage has a carousel that auto rotates through the cooking utensils to promote the owners brand.
-![carousel](static/img/carosel.PNG)
+
+    ![carousel](static/img/carosel.PNG)
+
 
 - The profile page allows users to update or delete any previous recipies they have added.
+
+    ![carousel](static/img/update_delete.PNG)
+
 - The "Add Your Dish" page allows users to create and add their own dishes to the website.
 - The "Add Your Dish" page allows users to search all the recipies that have been added to the site.
+
+    ![carousel](static/img/search.PNG)
+
 - The "Join" page allows users to create their own registration details which are then stored on MongoDB and accessed once the user logs in.
 - A custom 404 page will give a friendly display to the user if they look for a page that isnt on the site.
-![404](static/img/404page.PNG)
+    
+    ![404](static/img/404page.PNG)
 
 # Technologies Used
 
 - HTML5 for the website strcuture.
 
 - CSS3 for the websites appearence.
+
+- Materialize
 
 - JQuery
 
@@ -107,7 +120,7 @@ This has since been corrected with some CSS padding.
 
 ## Profile
 #### Desktop
-Table needs to be corrected, its currently extending out to the left. Can be fixed with a multiline text input field.
+Table needs to be corrected, its currently extending out to the right. Can be fixed with a multiline text input field.
 
 ![deskprofile](static/img/profile.PNG)
 
@@ -135,11 +148,25 @@ Table needs to be corrected
 
 #### Desktop
 The dishes page works as expected on the desktop. No need for any chages
+
 ![mobiledishes](static/img/add.PNG)
 
 #### Desktop
 The dishes page works as expected on the mobile. No need for any chages
+
 ![mobiledishes](static/img/addmobile.PNG)
+
+## Custom 404 page
+
+#### Desktop
+The custom 404 page works as intended for the desktop
+
+![404desktop](static/img/404page.PNG)
+
+#### Mobile
+The custom 404 page works as intended for the mobile
+
+![404mobile](static/img/404mobile.PNG)
 
 
 Credits
