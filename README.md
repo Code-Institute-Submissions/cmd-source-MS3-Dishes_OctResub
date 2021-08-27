@@ -109,18 +109,23 @@ The other images are the utensils. These were all selected to give a very clean 
 
 ## Homepage
 #### Desktop
-Homepage works as intended on the desktop. The User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
+Homepage works as intended on the desktop. 
+The User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
+When the user clicks login in and enters the details they are redirected to thier profile page where they can see their details.
+Currently when the user clicks to register they are redirected to the registration page, however upon submitting the form the registration page refreches. Will update this to redirect them to their profile
 
 ![deskhome](static/img/desktop.PNG)
 
 #### Mobile
-Homepage works as intended on the mobile. The User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
+Homepage works as intended on the mobile. 
+The User lands on the page and everything displays correctly and the carousel of utensils rotates around as expected.
 
 ![deskmobile](static/img/homemobile.PNG)
 
 ## Cooking Utensils
 #### Desktop
-Displayed as intended when it had place holder text. However once I added in a proper description the formatted grid of the desktop was thrown off. I have fixed this for the moment by taking out the l4 class in the columns.
+Displayed as intended when it had place holder text. 
+However once I added in a proper description the formatted grid of the desktop was thrown off. I have fixed this for the moment by taking out the l4 class in the columns.
 
 ![deskUtensils](static/img/utensilsdesk.PNG)
 
@@ -224,6 +229,11 @@ How to clone and deploy this project:
 
 Credits
 
+- Materilize was used for the navbar, card panels and grid structure https://materializecss.com/
+- Fontawesome was used for the icons in the site https://fontawesome.com/
+- MongoDB was used as the database for the users CRUD operations https://cloud.mongodb.com/
+
+ The images used throughout the site were taken from the below links:
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
 - https://www.pxfuel.com/en/free-photo-eleiv
 - https://www.wallpaperflare.com/cooked-dish-on-white-plate-flat-lay-photography-of-cooked-food-with-coffees-wallpaper-zuewu
@@ -238,7 +248,5 @@ Credits
 - https://www.pxfuel.com/en/free-photo-erzod
 - https://www.piqsels.com/en/public-domain-photo-ftvfv
 
-
 Acknowledgements
-
-https://www.youtube.com/watch?v=3O4ZmH5aolg
+I was inspired to insert a custom 404 page thanks to this video https://www.youtube.com/watch?v=3O4ZmH5aolg
