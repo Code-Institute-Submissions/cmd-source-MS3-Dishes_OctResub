@@ -67,14 +67,22 @@ The other images are the utensils. These were all selected to give a very clean 
 
 - The profile page allows users to update or delete any previous recipies they have added.
 
-    ![carousel](static/img/update_delete.PNG)
+    ![update](static/img/update_delete.PNG)
 
 - The "Add Your Dish" page allows users to create and add their own dishes to the website.
-- The "Add Your Dish" page allows users to search all the recipies that have been added to the site.
 
-    ![carousel](static/img/search.PNG)
+    ![add](static/img/adddish.PNG)
+
+- The "Dishes" page allows users to search all the recipies that have been added to the site.
+
+    ![search](static/img/search.PNG)
 
 - The "Join" page allows users to create their own registration details which are then stored on MongoDB and accessed once the user logs in.
+
+    ![join](static/img/join.PNG)
+
+    ![join](static/img/signin.PNG)
+
 - A custom 404 page will give a friendly display to the user if they look for a page that isnt on the site.
     
     ![404](static/img/404page.PNG)
@@ -89,9 +97,13 @@ The other images are the utensils. These were all selected to give a very clean 
 
 - JQuery
 
-- Python3 
+- Python3 for the backend
 
-- MongoDB
+- MongoDB as a databasee
+
+- Flask as a web framework
+
+- Heroku and Github for deployment
 
 # Testing
 
@@ -187,6 +199,28 @@ The custom 404 page works as intended for the mobile
 ![html](static/img/jsvalidator.PNG)
 
 ![html](static/img/pythonvalidator.PNG)
+
+## Deployment
+
+To deploy this project Heroku is needed for the backend and Github for the frontend. Accounts will be needed on both before starting.
+
+ - Start with the developement enviroment, in my case Gitpod
+ - In the developement enviroment install the requirements for this project found in requirements.txt using the pip3 command.
+ - Setup the database MongoDB. From there set up the collections which will be used to store users,dish types and dishes added by users
+ - Setup connection security, choose a connection method and then connect by following the instructs MongoDB provides once you click "connect" on the collection.
+ - Once this is done enviroment variables will be needed. Store the enviroment variables in a file called "env.py" and then place that file in a ".gitignore" file.
+ - Once this is done the python file called "app.py" can be created and run by typing "python3 app.py" into the terminal.
+ - Deploy the app and Github
+ - Then move over to Heroku and follow the instructions to get started.
+ - Connect the app on Heroku to Github by entering the repository name and click connect.
+ - Once this is done the enviroment variables that were entered into the "env.py" file will need to be entered into Heroku into the "Config Vars" in the settings tab. 
+ - Finally ensure that automatic deployments is selected in the Deploy tab on Heroku so that changes flow through.
+
+How to clone and deploy this project:
+- Navigate to the repository where the project is stored.
+- Click on the Code button which will give the option to download the content and the url.
+- Copy the url.
+- In your chosen IDE in the terminal type "git clone (followed by the copied url)".
 
 Credits
 
