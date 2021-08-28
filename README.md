@@ -29,7 +29,7 @@ There are two goals for this website. The first is for external users to find an
     - I want my brand of cooking utensils/tools to be promoted to incoming users.
 
 #### Wireframes:
-The five planes of UX were kept in mind from the beginning of the design to the end. However I deviated from the wireframes as I built out the wesite. In the beginning in making the wireframes I originally planned on having four screens. But as I continued to builed out the website it became obvious that I would also need to include a profile page, a login and register page.
+The five planes of UX were kept in mind from the beginning of the design to the end. However I deviated from the wireframes as I built out the wesite. In the beginning in making the wireframes I originally planned on having four screens. But as I continued to build out the website it became obvious that I would also need to include a profile page, a login,a register page and later on I was also inspired to add in a custom 404 page.
 
 ![Homepage](static/img/homepage.JPG)
 
@@ -40,9 +40,9 @@ The five planes of UX were kept in mind from the beginning of the design to the 
 ![Homepage](static/img/search.JPG)
 
 #### Design
-The overall design for this website is simple but effective for the websites goals. The homepage instantly highlights a weclome message to a new user to join or for existing users to log in. Underneath that there is a carousel which slowly rotates through the brand of cooking utensils, upon clicking on an image the user is redirected to the utensils page which has greater information.
+The overall design for this website is simple but effective for the websites goals. The homepage instantly highlights a welcome message to a new user to join or for existing users to log in. Underneath that there is a carousel which slowly rotates through the brand of cooking utensils, upon clicking on an image the user is redirected to the utensils page which has greater information on the websites brand of cooking tools.
 
-If the user wants to access the library of dishes, they either need to log in or register. Once they do this they will get access to their profile, the sites recipies from other users and they will be able to add/update/delete their own recipes and dishes on the website.
+If the user wants to access the library of dishes/recipes, they either need to log in or register. Once they do this they will get access to their profile, the sites recipies from other users and they will be able to add/update/delete their own recipes and dishes on the website.
 
 Throughout the website each form/table or center piece for that page is highlighted by a card panal which focuses the users attention. This provides for a good contrast between the background image and for a better user experience.
 
@@ -197,6 +197,8 @@ The custom 404 page works as intended for the mobile
 
 #### Testing with the HTML, CSS, Javascript and Python Validators
 
+All four validators were passed. The only issue was on Javascript validator where it was picking up the $ from the JQuery.
+
 ![html](static/img/htmlvalidator.PNG)
 
 ![html](static/img/cssvalidator.PNG)
@@ -211,11 +213,12 @@ To deploy this project Heroku is needed for the backend and Github for the front
 
  - Start with the developement enviroment, in my case Gitpod
  - In the developement enviroment install the requirements for this project found in requirements.txt using the pip3 command.
- - Setup the database MongoDB. From there set up the collections which will be used to store users,dish types and dishes added by users
+ - Setup the database MongoDB. From there set up the collections which will be used to store users,dish types and dishes added by users.
  - Setup connection security, choose a connection method and then connect by following the instructs MongoDB provides once you click "connect" on the collection.
  - Once this is done enviroment variables will be needed. Store the enviroment variables in a file called "env.py" and then place that file in a ".gitignore" file.
  - Once this is done the python file called "app.py" can be created and run by typing "python3 app.py" into the terminal.
- - Deploy the app and Github
+ - Deploy the app on Github.
+ - In the terminal enter the commands: "pip3 freeze --local > requirements.txt" and "echo web: python app.py > Procfile" this will tell Heroku the dependencies and which file runs the app.
  - Then move over to Heroku and follow the instructions to get started.
  - Connect the app on Heroku to Github by entering the repository name and click connect.
  - Once this is done the enviroment variables that were entered into the "env.py" file will need to be entered into Heroku into the "Config Vars" in the settings tab. 
@@ -232,6 +235,7 @@ Credits
 - Materilize was used for the navbar, card panels and grid structure https://materializecss.com/
 - Fontawesome was used for the icons in the site https://fontawesome.com/
 - MongoDB was used as the database for the users CRUD operations https://cloud.mongodb.com/
+- The enviroment variables that were used in this project were taken from the Code Institutes walkthrough project PythonMiniProject https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/579bbf01edaf47938e6a860b8f08f275/
 
  The images used throughout the site were taken from the below links:
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients

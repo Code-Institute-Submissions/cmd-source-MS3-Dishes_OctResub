@@ -47,6 +47,7 @@ def searchdishes():
     course = mongo.db.dish.find({"$text": {"$search": search}})
     return render_template("dishes.html", dishes=course)
 
+
 '''
 Renders the registration page page and checks to see
 if a user already exists before adding a new user
@@ -186,6 +187,7 @@ def delete_dish(dish_id):
     mongo.db.dish.remove({"_id": ObjectId(dish_id)})
     flash("The selected dish was deleted")
     return redirect(url_for('dishes'))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
