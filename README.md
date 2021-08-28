@@ -86,6 +86,14 @@ The other images are the utensils. These were all selected to give a very clean 
 - A custom 404 page will give a friendly display to the user if they look for a page that isnt on the site.
     
     ![404](static/img/404page.PNG)
+    
+#### The data
+For this project 3 collections were created inside the "dishes" database. They are "dish","dish_type" and "dish_users". I felt this was enough as it allowed for all the CRUD functionality that was necessary.
+
+ - "dish_type" is a simple collection used as a choice for the users to select the type of dish they want when adding thier receipes.
+ - "dish" calls upon "dish_type" for an input and has 3 additional inputs. One of these is "created_by", this allows for me to display only the relevent recipes to that particular users profile.
+ - "dish_users" take the basic information of the user and uses "user_name" and "user_password" to verify the correct user logging in.
+
 
 # Technologies Used
 
