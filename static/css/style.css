@@ -1,8 +1,10 @@
+/* applied to all pages*/
 body {
     background-image: url("../img/backgroundimg.jpg");
     background-color: rgb(239, 239, 245);
 }
 
+/* home.html*/
 #mainheading {
     text-align: center;
 }
@@ -21,29 +23,30 @@ div h5, h6 {
 
 }
 
-#maincard {
-    text-align: center;
-}
-
+/* Navbar*/
 #logo {
     padding: 10px;
 }
 
+/* login.html*/
 .signin {
     padding-top: 150px;
 }
 
+/* utensils.html*/
 .gallery {
     width: 240px;
     height:180px;
 
 }
 
+/* newdish.html*/
 #description {
     padding: 25px;
     height: 250px;
 }
 
+/* dishes.html*/
 #display {
     height: 250px;
 }
