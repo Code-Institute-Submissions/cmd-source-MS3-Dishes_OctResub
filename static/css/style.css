@@ -41,4 +41,9 @@ div h5, h6 {
 
 #description {
     padding: 25px;
+    height: 250px;
+}
+
+#display {
+    height: 250px;
 }

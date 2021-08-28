@@ -236,6 +236,7 @@ Credits
 - Fontawesome was used for the icons in the site https://fontawesome.com/
 - MongoDB was used as the database for the users CRUD operations https://cloud.mongodb.com/
 - The enviroment variables that were used in this project were taken from the Code Institutes walkthrough project PythonMiniProject https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+DCP101+2017_T3/courseware/9e2f12f5584e48acb3c29e9b0d7cc4fe/579bbf01edaf47938e6a860b8f08f275/
+- Help on fixing my textarea was taken from Stackoverflow https://stackoverflow.com/questions/5271782/how-to-disable-the-resize-grabber-of-textarea
 
  The images used throughout the site were taken from the below links:
 - https://pixnio.com/media/woman-cooking-breakfast-people-ingredients
@@ -251,6 +252,15 @@ Credits
 - https://pxhere.com/en/photo/894960
 - https://www.pxfuel.com/en/free-photo-erzod
 - https://www.piqsels.com/en/public-domain-photo-ftvfv
+
+ Recipies and dishes that were added to the site were taken from the below:
+- https://www.bbcgoodfood.com/recipes/thai-fried-prawn-pineapple-rice 
+- https://www.bbcgoodfood.com/recipes/chicken-pad-thai
+- https://www.bbcgoodfood.com/recipes/slow-cooked-irish-stew
+- https://www.bbcgoodfood.com/recipes/irish-coddled-pork-cider
+- https://www.bbcgoodfood.com/recipes/chinese-chicken-curry
+- https://www.bbcgoodfood.com/recipes/mexican-bean-soup-guacamole
+
 
 Acknowledgements
 I was inspired to insert a custom 404 page thanks to this video https://www.youtube.com/watch?v=3O4ZmH5aolg
