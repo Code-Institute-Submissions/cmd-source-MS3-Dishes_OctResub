@@ -8,7 +8,7 @@
             <select id="dish_type_name" name="dish_type_name">
                 <option value="" disabled>Choose your dish type</option>
                 {% for dish in dishes %}
-                    {% if dish.dish_type == dish_type.dish.dish_type_name %}
+                    {% if dish.dish_type == dish.dish_type_name %}
                         <option value="{{ dish.dish_type_name }}" selected>{{ dish.dish_type_name }} </option>
                     {% else %}
                         <option value="{{ dish.dish_type_name }}">{{ dish.dish_type_name }} </option>
