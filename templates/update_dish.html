@@ -11,7 +11,7 @@
                 {% if dish.dish_name == dish.dish_name %}
                 <option value="{{ dish.dish_type_name }}" selected>{{ dish.dish_type_name }} </option>
                 {% else %}
-                <option value="{{ dish.dish_type_name }}" selected>{{ dish.dish_type_name }} </option>
+                <option value="{{ dish.dish_type_name }}">{{ dish.dish_type_name }} </option>
                 {% endif %}
                 {% endfor %}
             </select>
