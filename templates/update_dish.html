@@ -8,11 +8,11 @@
             <select id="dish_type_name" name="dish_type_name">
                 <option value="" disabled selected>Choose your dish type</option>
                 {% for dish in dishes %}
-                {% if dish.dish_name == dish.dish_name %}
-                <option value="{{ dish.dish_type_name }}" selected>{{ dish.dish_type_name }} </option>
-                {% else %}
-                <option value="{{ dish.dish_type_name }}">{{ dish.dish_type_name }} </option>
-                {% endif %}
+                    {% if dish.dish_type == dish_type.dish_type_name %}
+                        <option value="{{ dish.dish_type_name }}" selected>{{ dish.dish_type_name }} </option>
+                    {% else %}
+                        <option value="{{ dish.dish_type_name }}">{{ dish.dish_type_name }} </option>
+                    {% endif %}
                 {% endfor %}
             </select>
             <label for="dish_type_name">Type of dish</label>
