@@ -2,18 +2,26 @@
 
 {% block content %}
 <div class="container">
-    <h3 class="card-panel center-align">Update Your Dish</h3>
+    <h3 class="card-panel center-align">Hello</h3>
     <form method="POST" class="card-panel center-align" action="{{ url_for('update_dish', dish_id=dish._id) }}">
         <div class="input-field col s12">
             <select id="dish_type_name" name="dish_type_name">
                 <option value="" disabled>Choose your dish type</option>
-                {% for dish in dishes %}
-                    {% if dish.dish_type == dish_type.dish_type_name %}
-                        <option value="{{ dish.dish_type }}" selected>{{ dish.dish_type }} </option>
+                <!-- {% for plate in dishes %}
+                
+                       {% if plate.dish_type_name == dish.dish_type  %}
+                        <option value="{{ plate[dish_type_name] }}" selected>{{ plate[dish_type_name]  }} </option>
                     {% else %}
-                        <option value="{{ dish.dish_type }}">{{ dish.dish_type }} </option>
+                        <option value="{{ plate[dish_type_name] }}">{{ plate[dish_type_name]  }} </option>
                     {% endif %}
+                    <option value="{{ plate.dish_type_name }}">{{ plate.dish_type_name  }} </option>         
+
+
+                {% endfor %} --> 
+                {% for plate in dishes %}
+                    <option value="{{ plate.dish_type_name }}">{{ plate.dish_type_name }} </option>
                 {% endfor %}
+                
             </select>
             <label for="dish_type_name">Type of dish</label>
         </div>

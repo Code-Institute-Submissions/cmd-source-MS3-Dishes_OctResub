@@ -159,6 +159,9 @@ def newdish():
         flash("Your dish was added")
         return redirect(url_for("dishes"))
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
+
+    for i in new_dish:
+        print("look at this", i.dish_type_name)
     return render_template("newdish.html", dishes=new_dish)
 
 # Renders the page for editing dishes
@@ -177,6 +180,11 @@ def update_dish(dish_id):
 
     dish = mongo.db.dish.find_one({"_id": ObjectId(dish_id)})
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
+
+    for i in new_dish:
+        print("look at this", i["dish_type_name"])
+
+    print("new dish", new_dish)
     return render_template("update_dish.html", dish=dish, dishes=new_dish)
 
 # Deletes a selected recipe and returns the user to the dishes page
@@ -192,4 +200,4 @@ def delete_dish(dish_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
