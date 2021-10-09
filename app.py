@@ -175,16 +175,15 @@ def update_dish(dish_id):
             "dish_type": request.form.get("dish_type_name"),
             "dish_description": request.form.get("description")
         }
-        mongo.db.dish.update({"_id": ObjectId(dish_id)}, update_dish)
+        new_dish = mongo.db.dish.update({"_id": ObjectId(dish_id)}, update_dish)
         flash("Your dish was updated")
 
     dish = mongo.db.dish.find_one({"_id": ObjectId(dish_id)})
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
 
     for i in new_dish:
-        print("look at this", i["dish_type_name"])
+        print("Hey look at me", i)
 
-    print("new dish", new_dish)
     return render_template("update_dish.html", dish=dish, dishes=new_dish)
 
 # Deletes a selected recipe and returns the user to the dishes page
