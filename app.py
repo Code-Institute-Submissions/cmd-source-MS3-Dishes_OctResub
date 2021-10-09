@@ -160,8 +160,6 @@ def newdish():
         return redirect(url_for("dishes"))
     new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
 
-    for i in new_dish:
-        print("look at this", i.dish_type_name)
     return render_template("newdish.html", dishes=new_dish)
 
 # Renders the page for editing dishes
@@ -179,10 +177,7 @@ def update_dish(dish_id):
         flash("Your dish was updated")
 
     dish = mongo.db.dish.find_one({"_id": ObjectId(dish_id)})
-    new_dish = mongo.db.dish_type.find().sort("dish_type_name", 1)
-
-    for i in new_dish:
-        print("Hey look at me", i)
+    new_dish = list(mongo.db.dish_type.find().sort("dish_type_name", 1))
 
     return render_template("update_dish.html", dish=dish, dishes=new_dish)
 

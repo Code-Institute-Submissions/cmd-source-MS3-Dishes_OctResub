@@ -11,4 +11,7 @@ $(document).ready(function () {
     $('.carousel').carousel('next');
     setTimeout(autoplay, 4000);
   }
+
+  $('#dish_type_name').dropdown();
+
 });
