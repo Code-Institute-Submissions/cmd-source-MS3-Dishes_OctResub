@@ -217,7 +217,7 @@ All four validators were passed. The only issue was on Javascript validator wher
 
 ## Deployment
 
-To deploy this project Heroku is needed for the backend, Github for the frontend and MongoDB to be used as a database. Accounts will be needed on these before starting.
+To deploy this project Heroku is needed for the backend, Github for the frontend and MongoDB to be used as a database. Accounts will be needed on these before starting. It is important to note that this project wont run locally unless the enviroment variables are set up correctly within the env.py file. These variables and values must be the same within the Heroku deployment tab.
 
  - Start with the developement enviroment, in my case Gitpod
  - In the developement enviroment install the requirements for this project found in requirements.txt using the pip3 command.
@@ -227,7 +227,7 @@ To deploy this project Heroku is needed for the backend, Github for the frontend
  - Setup connection security, choose a connection method and then connect by following the instructs MongoDB provides once you click "connect" on the collection.
  - Once this is done enviroment variables will be needed. 
  - The enviroment vairables used here are: "IP", "PORT", ""SECRET_KEY", "MONGO_URI", "MONGO_DBNAME"
- - Store the enviroment variables in a file called "env.py" and then place that file in a ".gitignore" file.
+ - Store the enviroment variables in a file called "env.py" and then place that file in a ".gitignore" file. This will ensure the enviroment variables are not pushed to Github for security reasons.
  - Once this is done the python file called "app.py" can be created and run by typing "python3 app.py" into the terminal.
  - Deploy the app on Github.
  - In the terminal enter the commands: "pip3 freeze --local > requirements.txt" and "echo web: python app.py > Procfile" this will tell Heroku the dependencies and which file runs the app.
