@@ -32,6 +32,12 @@
             <td class="center-align">{{ dish.dish_type }}</td>
             <td class="center-align">{{ dish.dish_name }}</td>
             <td class="center-align"><textarea disabled maxlength="500" id="display" name="" rows="10" cols="150">{{ dish.dish_description }}</textarea></td>
+            
+            {% if dish.created_by == username %}
+            <td class=""><a href="{{url_for('update_dish', dish_id=dish._id)}}" class="green btn">Update</a></td>
+            <td class=""><a href="{{url_for('delete_dish', dish_id=dish._id)}}" class="red btn">Delete</a></td>
+
+            {% endif %}
         </tr>
         {% endfor %}
     </div>

@@ -34,7 +34,7 @@ def home():
 
 
 # Renders the available dishes for Cookbook from MongoDB
-@app.route("/dishes")
+@app.route("/dishes/")
 def dishes():
     course = mongo.db.dish.find()
     return render_template("dishes.html", dishes=course)

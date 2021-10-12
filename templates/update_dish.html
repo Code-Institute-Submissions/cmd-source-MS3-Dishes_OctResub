@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-    <h3 class="card-panel center-align">Edit the Dish</h3>
+    <h3 class="card-panel center-align">Hi {{ username }} edit your Dish</h3>
     <form method="POST" class="card-panel center-align" action="{{ url_for('update_dish', dish_id=dish._id) }}">
         <div class="input-field col s12">
 
