@@ -174,7 +174,8 @@ def update_dish(dish_id):
             "dish_description": request.form.get("description"),
             "created_by": session['user_cookie']
         }
-        new_dish = mongo.db.dish.update({"_id": ObjectId(dish_id)}, update_dish)
+        new_dish = mongo.db.dish.update(
+            {"_id": ObjectId(dish_id)}, update_dish)
         flash("Your dish was updated")
 
     dish = mongo.db.dish.find_one({"_id": ObjectId(dish_id)})
