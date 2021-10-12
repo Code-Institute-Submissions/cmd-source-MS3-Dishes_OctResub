@@ -10,6 +10,7 @@
 4. Testing
 5. Deployment
 6. Credits and Acknowledgements
+7. Updates since the projects first submission
 
 There are two goals for this website. The first is for external users to find and share recipes, the second is for the owners of the site to promote their brand of cooking utensils.
 
@@ -243,6 +244,10 @@ How to clone and deploy this project:
 - Copy the url.
 - In your chosen IDE in the terminal type "git clone (followed by the copied url)".
 
+How to Fork this project:
+- Log onto github and at the top of this repository there is an option "Fork"
+- This will give you a copy of the repository
+
 Credits
 
 - Materilize was used for the navbar, card panels and grid structure https://materializecss.com/
@@ -277,3 +282,28 @@ Credits
 
 Acknowledgements
 I was inspired to insert a custom 404 page thanks to this video https://www.youtube.com/watch?v=3O4ZmH5aolg
+
+
+## Updates since the projects first submission
+On the projects first submission attempt there were a few factors that caused it to fail these have been updated since.
+They were criterion 1.3, criterion 1.6, criterion 3.1, criterion 4.2
+
+For criterion 1.3 there was an issue when attempting to update dish on the form, the below code has been added which has resolved this
+
+    {% for plate in dishes %}
+        {% if dish.dish_type == plate.dish_type_name %}
+            <option value="{{ plate.dish_type_name }}" selected>{{ plate.dish_type_name }} </option>
+        {% else %}
+            <option value="{{ plate.dish_type_name }}">{{ plate.dish_type_name }} </option>
+        {% endif %}
+    {% endfor %}
+
+
+For criterion 1.6
+There was an issue in passing the HTML validator which will be attached here before the project is resubmitted
+
+criterion 3.1
+There was an issue in some of the CRUD operations which have now all been amended
+
+criterion 4.2
+Deployment process could be elaborated on further
