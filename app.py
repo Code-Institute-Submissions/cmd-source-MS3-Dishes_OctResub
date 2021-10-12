@@ -171,7 +171,8 @@ def update_dish(dish_id):
         update_dish = {
             "dish_name": request.form.get("dish"),
             "dish_type": request.form.get("dish_type_name"),
-            "dish_description": request.form.get("description")
+            "dish_description": request.form.get("description"),
+            "created_by": session['user_cookie']
         }
         new_dish = mongo.db.dish.update({"_id": ObjectId(dish_id)}, update_dish)
         flash("Your dish was updated")
