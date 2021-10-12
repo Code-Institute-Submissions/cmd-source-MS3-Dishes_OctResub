@@ -3,36 +3,38 @@
 {% block content %}
 <div class="container">
     <div class="card-panel">
-    <h3 class="center-align ">Tell Us Your New Dish...</h3>
-    <form method="POST" class="center-align" action="{{ url_for('newdish') }}">
-        <div class="input-field col s12">
-            <select id="dish_type_name" name="dish_type_name">
-                <option value="" disabled selected>Choose your dish type</option>
-                {% for dish in dishes %}
+        <h3 class="center-align ">Tell Us Your New Dish...</h3>
+        <form method="POST" class="center-align" action="{{ url_for('newdish') }}">
+            <div class="input-field col s12">
+                <select id="dish_type_name" name="dish_type_name">
+                    <option value="" disabled selected>Choose your dish type</option>
+                    {% for dish in dishes %}
                     <option value="{{ dish.dish_type_name }}">{{ dish.dish_type_name }} </option>
-                {% endfor %}
-            </select>
-            <label for="dish_type_name">Type of dish</label>
-        </div>
-        <div class="input-field col s12">
-            <input type="text" maxlength="30" name="dish" placeholder="Dish" id="dish">
-        </div>
-        <textarea class="input-field col s12" name="description" placeholder="Description" id="description" height="100px" style="resize:none"></textarea>
+                    {% endfor %}
+                </select>
+                <label for="dish_type_name">Type of dish</label>
+            </div>
+            <div class="input-field col s12">
+                <input type="text" maxlength="30" name="dish" placeholder="Dish" id="dish">
+            </div>
+            <textarea class="input-field col s12" name="description" placeholder="Description" id="description"
+                height="100px" style="resize:none"></textarea>
 
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="far fa-share-square"></i>
-        </button>
-    </form>
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="far fa-share-square"></i>
+            </button>
+        </form>
     </div>
 
     {% for dish in dishes %}
-        <tr>
-            <td class="center-align">{{ dish.dish_type }}</td>
-            <td class="center-align">{{ dish.dish_name }}</td>
-            <td class="center-align">{{ dish.dish_description }}</td>
-            <td class="center-align"><a href="{{url_for('update_dish', dish_id=dish._id)}}" class="green btn">Update</a></td>
-            <td class="center-align"><a href="{{url_for('delete_dish', dish_id=dish._id)}}" class="red btn">Delete</a></td>
-        </tr>
+    <tr>
+        <td class="center-align">{{ dish.dish_type }}</td>
+        <td class="center-align">{{ dish.dish_name }}</td>
+        <td class="center-align">{{ dish.dish_description }}</td>
+        <td class="center-align"><a href="{{url_for('update_dish', dish_id=dish._id)}}" class="green btn">Update</a>
+        </td>
+        <td class="center-align"><a href="{{url_for('delete_dish', dish_id=dish._id)}}" class="red btn">Delete</a></td>
+    </tr>
     {% endfor %}
 </div>
 

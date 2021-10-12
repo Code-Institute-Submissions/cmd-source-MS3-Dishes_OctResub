@@ -1,82 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-    <title>Dishes</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+    integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+    crossorigin="anonymous" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+  <title>Dishes</title>
 </head>
 
 <header>
-    <!--Navbar taken from Materialize-->
-    <nav>
-        <div class="nav-wrapper">
-          <a href="{{ url_for('home') }}" id="logo" class="brand-logo">
-            <div>
-              <i class="fas fa-utensils"></i>
-            </div></a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-          <ul class="right hide-on-med-and-down">
-          
-              <li><a href="{{ url_for('home') }}">Home</a></li>
-              <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
-            {% if session.user_cookie %}
-              <li><a href="{{ url_for('profile', username=session['user_cookie']) }}">Profile</a></li>
-              <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
-              <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
-              <li><a href="{{ url_for('logout') }}">Logout</a></li>
-            {% else %}
-              <li><a href="{{ url_for('register') }}">Join</a></li>
-              <li><a href="{{ url_for('login') }}">Login</a></li>
-            {% endif %}
-          </ul>
+  <!--Navbar taken from Materialize-->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="{{ url_for('home') }}" id="logo" class="brand-logo">
+        <div>
+          <i class="fas fa-utensils"></i>
         </div>
-      </nav>
-    
-      <ul class="sidenav" id="mobile-demo">
-          <li><a href="{{ url_for('home') }}">Home</a></li>
-          <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
+      </a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      <ul class="right hide-on-med-and-down">
+
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
         {% if session.user_cookie %}
-          <li><a href="{{ url_for('profile', username=session['user_cookie']) }}">Profile</a></li>
-          <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
-          <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
-          <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        <li><a href="{{ url_for('profile', username=session['user_cookie']) }}">Profile</a></li>
+        <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
+        <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% else %}
-          <li><a href="{{ url_for('register') }}">Join</a></li>
-          <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Join</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
         {% endif %}
       </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="{{ url_for('home') }}">Home</a></li>
+    <li><a href="{{ url_for('utensils') }}">Cooking Utensils</a></li>
+    {% if session.user_cookie %}
+    <li><a href="{{ url_for('profile', username=session['user_cookie']) }}">Profile</a></li>
+    <li><a href="{{ url_for('dishes') }}">Dishes</a></li>
+    <li><a href="{{ url_for('newdish') }}">Add Your Dish</a></li>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    {% else %}
+    <li><a href="{{ url_for('register') }}">Join</a></li>
+    <li><a href="{{ url_for('login') }}">Login</a></li>
+    {% endif %}
+  </ul>
 </header>
 
 <!--Flash Messages to display taken from the Python Mini Project by CodeInstitute-->
 <div class="container">
   {% with messages = get_flashed_messages() %}
-      {% if messages %}
-          {% for message in messages %}
-              <div class="row flashes">
-                  <h4 class="light-blue lighten-4 center-align">{{ message }}</h4> 
-              </div>
-          {% endfor %}
-      {% endif %}
+  {% if messages %}
+  {% for message in messages %}
+  <div class="row flashes">
+    <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+  </div>
+  {% endfor %}
+  {% endif %}
   {% endwith %}
 </div>
 
 <main>
-    {% block content %} 
-        
-    {% endblock %}
+  {% block content %}
 
-    {% block dish %} 
-        
-    {% endblock %}
+  {% endblock %}
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block dish %}
+
+  {% endblock %}
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </main>
+
 </html>
