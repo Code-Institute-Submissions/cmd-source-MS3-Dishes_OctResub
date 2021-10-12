@@ -39,7 +39,7 @@
           <tr>
               <td class="center-align">{{ dish.dish_type }}</td>
               <td class="center-align">{{ dish.dish_name }}</td>
-              <td class="center-align"><textarea maxlength="500" id="" name="" rows="10" cols="150">{{ dish.dish_description }}</textarea></td>
+              <td class="center-align"><textarea disabled maxlength="500" id="profile_dish_description" name="" rows="10" cols="150">{{ dish.dish_description }}</textarea></td>
               <td class="center-align"><a href="{{url_for('update_dish', dish_id=dish._id)}}" class="green btn">Update</a></td>
               <td class="center-align"><a href="{{url_for('delete_dish', dish_id=dish._id)}}" class="red btn">Delete</a></td>
           </tr>

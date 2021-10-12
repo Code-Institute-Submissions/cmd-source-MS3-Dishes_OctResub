@@ -44,7 +44,7 @@ def dishes():
 @app.route("/searchdishes", methods=["GET", "POST"])
 def searchdishes():
     search = request.form.get("search")
-    course = mongo.db.dish.find({"$text": {"$search": search}})
+    course = list(mongo.db.dish.find({"$text": {"$search": search}}))
     return render_template("dishes.html", dishes=course)
 
 

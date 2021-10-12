@@ -50,3 +50,11 @@ div h5, h6 {
 #display {
     height: 250px;
 }
+
+textarea {
+    resize: none;
+ }
+
+#profile_dish_description {
+    height: 125px;
+}
