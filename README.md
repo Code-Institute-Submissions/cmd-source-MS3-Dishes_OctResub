@@ -218,7 +218,7 @@ All four validators were passed. The only issue was on Javascript validator wher
 
 ## Deployment
 
-To deploy this project Heroku is needed for the backend, Github for the frontend and MongoDB to be used as a database. Accounts will be needed on these before starting. It is important to note that this project wont run locally unless the enviroment variables are set up correctly within the env.py file. These variables and values must be the same within the Heroku deployment tab.
+To deploy this project Heroku is needed for the backend, Github was used as a repository with HTML/CSS for the frontend and MongoDB to be used as a database. Accounts will be needed on these before starting. It is important to note that this project wont run locally unless the enviroment variables are set up correctly within the env.py file. These variables and values must be the same within the Heroku deployment tab.
 
  - Start with the developement enviroment, in my case Gitpod
  - In the developement enviroment install the requirements for this project found in requirements.txt using the pip3 command.
@@ -286,7 +286,7 @@ I was inspired to insert a custom 404 page thanks to this video https://www.yout
 
 ## Updates since the projects first submission
 On the projects first submission attempt there were a few factors that caused it to fail these have been updated since.
-They were criterion 1.3, criterion 1.6, criterion 3.1, criterion 4.2
+They were criterion 1.3, criterion 1.6, criterion 3.1, criterion 4.3
 
 For criterion 1.3 there was an issue when attempting to update dish on the form, the below code has been added which has resolved this
 
@@ -313,7 +313,15 @@ Adding html validations for the pages below:
     ![utensils](static/img/validHTML_utensils.PNG)
 
 criterion 3.1
-There was an issue in some of the CRUD operations which have now all been amended
+There was an issue in some of the CRUD operations which have now all been amended with this code
 
-criterion 4.2
-Deployment process could be elaborated on further
+    {% for plate in dishes %}
+        {% if dish.dish_type == plate.dish_type_name %}
+            <option value="{{ plate.dish_type_name }}" selected>{{ plate.dish_type_name }} </option>
+        {% else %}
+            <option value="{{ plate.dish_type_name }}">{{ plate.dish_type_name }} </option>
+        {% endif %}
+    {% endfor %}
+
+criterion 4.3
+Deployment process could be elaborated on further, I have since added more detail to the deployment process
