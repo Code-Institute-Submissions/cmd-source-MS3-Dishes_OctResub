@@ -324,14 +324,14 @@ There was an issue in passing the HTML validator which will be attached here bef
 
 Adding html validations for the pages below:
 
-    ![home](static/img/validHTML_home.PNG)
-    ![404](static/img/validHTML_404.PNG)
-    ![login](static/img/validHTML_login.PNG)
-    ![newdish](static/img/validHTML_newdish.PNG)
-    ![register](static/img/validHTML_register.PNG)
-    ![profile](static/img/validHTML_profile.PNG)
-    ![updatedish](static/img/validHTML_home.PNG)
-    ![utensils](static/img/validHTML_utensils.PNG)
+   ![home](static/img/validHTML_home.PNG)
+   ![404](static/img/validHTML_404.PNG)
+   ![login](static/img/validHTML_login.PNG)
+   ![newdish](static/img/validHTML_newdish.PNG)
+   ![register](static/img/validHTML_register.PNG)
+   ![profile](static/img/validHTML_profile.PNG)
+   ![updatedish](static/img/validHTML_home.PNG)
+   ![utensils](static/img/validHTML_utensils.PNG)
 
 criterion 3.1
 There was an issue in some of the CRUD operations which have now all been amended with this code
