@@ -36,7 +36,7 @@
         <tr>
           <td class="center-align"><small>{{ dish.dish_type }}</small></td>
           <td class="center-align"><small>{{ dish.dish_name }}</small></td>
-          <td class="center-align"><small><textarea disabled maxlength="500" id="profile_dish_description" name=""
+          <td class="center-align"><small><textarea disabled maxlength="500" class="profile_dish_description" name="profile_dish_description"
                 rows="10" cols="150">{{ dish.dish_description }}</textarea></small></td>
           <td class="center-align">
             <div class="center-align">
@@ -52,6 +52,6 @@
         {% endif %}
       {% endfor %}
   </table>
-
+</div>
 
   {% endblock %}
