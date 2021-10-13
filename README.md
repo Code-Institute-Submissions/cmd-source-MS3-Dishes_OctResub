@@ -220,7 +220,7 @@ All four validators were passed. The only issue was on Javascript validator wher
 
 To deploy this project Heroku is needed for the backend, Github was used as a repository with HTML/CSS for the frontend and MongoDB to be used as a database. Accounts will be needed on these before starting. It is important to note that this project wont run locally unless the enviroment variables are set up correctly within the env.py file. These variables and values must be the same within the Heroku deployment tab.
 
-Steps I took to deploy my project
+#### Steps I took to deploy my project:
  - Start with the developement enviroment, in my case Gitpod
  - In the developement enviroment I installed the requirements for this project found in requirements.txt using the pip3 command.
  - I setup the database MongoDB. From there I set up the collections which I used to store users,dish types and dishes added by users.
@@ -239,7 +239,7 @@ Steps I took to deploy my project
  - Once this was done the enviroment variables that were entered into the "env.py" file needed to be entered into Heroku into the "Config Vars" in the settings tab. 
  - Finally I ensured that automatic deployments were selected in the Deploy tab on Heroku so that changes flowed through.
 
-Steps necessary for another user to deploy:
+#### Steps necessary for another user to deploy:
 - From your chosen developement enviroment
 - Install the requirements for this project found in the requirements.txt file
 - MongoDB will be needed for a database
@@ -258,13 +258,13 @@ Steps necessary for another user to deploy:
 - Make sure you enable automatic deployment within the deploy tab on Heroku so that there are no differences between Gitub and Heroku
 - You will now be able to find the app URL and open the app in the top oright hand corner
 
-How to clone and deploy this project:
+#### How to clone and deploy this project:
 - Navigate to the repository where the project is stored.
 - Click on the Code button which will give the option to download the content and the url.
 - Copy the url.
 - In your chosen IDE in the terminal type "git clone (followed by the copied url)".
 
-How to Fork this project:
+#### How to Fork this project:
 - Log onto github and at the top of this repository there is an option "Fork"
 - This will give you a copy of the repository
 
@@ -323,6 +323,7 @@ For criterion 1.6
 There was an issue in passing the HTML validator which will be attached here before the project is resubmitted
 
 Adding html validations for the pages below:
+
     ![home](static/img/validHTML_home.PNG)
     ![404](static/img/validHTML_404.PNG)
     ![login](static/img/validHTML_login.PNG)
