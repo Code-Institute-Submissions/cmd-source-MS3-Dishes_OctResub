@@ -30,7 +30,7 @@
         <tr>
             <td class="center-align"><small>{{ dish.dish_type }}</small></td>
             <td class="center-align"><small>{{ dish.dish_name }}</small></td>
-            <td class="center-align"><small><textarea disabled maxlength="500" id="display" name="displaydescription" rows="10"
+            <td class="center-align"><small><textarea disabled maxlength="500" class="display" name="displaydescription" rows="10"
                         cols="150">{{ dish.dish_description }}</textarea></small></td>
 
             {% if dish.created_by == username %}

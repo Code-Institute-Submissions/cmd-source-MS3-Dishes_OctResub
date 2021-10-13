@@ -47,7 +47,7 @@ div h5, h6 {
 }
 
 /* dishes.html*/
-#display {
+.display {
     height: 250px;
 }
 
