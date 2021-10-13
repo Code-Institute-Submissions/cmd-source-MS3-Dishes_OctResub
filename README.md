@@ -220,23 +220,43 @@ All four validators were passed. The only issue was on Javascript validator wher
 
 To deploy this project Heroku is needed for the backend, Github was used as a repository with HTML/CSS for the frontend and MongoDB to be used as a database. Accounts will be needed on these before starting. It is important to note that this project wont run locally unless the enviroment variables are set up correctly within the env.py file. These variables and values must be the same within the Heroku deployment tab.
 
+Steps I took to deploy my project
  - Start with the developement enviroment, in my case Gitpod
- - In the developement enviroment install the requirements for this project found in requirements.txt using the pip3 command.
- - Setup the database MongoDB. From there set up the collections which will be used to store users,dish types and dishes added by users.
- - The values of the collections in MongoDB will be what stores the information displayed on the site.
+ - In the developement enviroment I installed the requirements for this project found in requirements.txt using the pip3 command.
+ - I setup the database MongoDB. From there I set up the collections which I used to store users,dish types and dishes added by users.
+ - The values of the collections in MongoDB is what stores the information displayed on the site.
     -   For example the dish_type collection I have currently has the values "Chinese","Thai","Indian","Mexican","Irish","Other"
- - Setup connection security, choose a connection method and then connect by following the instructs MongoDB provides once you click "connect" on the collection.
- - Once this is done enviroment variables will be needed. 
- - The enviroment vairables used here are: "IP", "PORT", ""SECRET_KEY", "MONGO_URI", "MONGO_DBNAME"
- - Store the enviroment variables in a file called "env.py" and then place that file in a ".gitignore" file. This will ensure the enviroment variables are not pushed to Github for security reasons.
- - Once this is done the python file called "app.py" can be created and run by typing "python3 app.py" into the terminal.
- - Deploy the app on Github.
- - In the terminal enter the commands: "pip3 freeze --local > requirements.txt" and "echo web: python app.py > Procfile" this will tell Heroku the dependencies and which file runs the app.
- - Then move over to Heroku, select "Create new app"  (The app name must be unique)
- - Connect the app on Heroku to Github by selecting the deployment method in the deploy tab to Github, search the repository name and click connect.
- - Make sure that the app has been deployed on Github so that updates on Github flow into Heroku, otherwise there may be differences between them.
- - Once this is done the enviroment variables that were entered into the "env.py" file will need to be entered into Heroku into the "Config Vars" in the settings tab. Its important that these match exactly. 
- - Finally ensure that automatic deployments is selected in the Deploy tab on Heroku so that changes flow through.
+ - I then choose a connection method and connected by following the instructs MongoDB provides once clicking "connect" on the collection.
+ - Once this is done enviroment variables were needed. 
+ - The enviroment vairables I used here are: "IP", "PORT", ""SECRET_KEY", "MONGO_URI", "MONGO_DBNAME"
+ - I stored the enviroment variables in a file called "env.py" and then place that file in a ".gitignore" file. This ensured the enviroment variables are not pushed to Github for security reasons.
+ - Once this was done the python file called "app.py" could be created and run by typing "python3 app.py" into the terminal.
+ - Deployed the app on Github.
+ - In the terminal the commands: "pip3 freeze --local > requirements.txt" and "echo web: python app.py > Procfile" told Heroku the dependencies and which file runs the app.
+ - Then over in Heroku, I selected "Create new app"  (The app name must be unique)
+ - I connected the app on Heroku to Github by selecting the deployment method in the deploy tab to Github, search the repository name and clicked connect.
+ - I Made sure that the app had been deployed on Github so that updates on Github flowed into Heroku, otherwise there would be differences between them.
+ - Once this was done the enviroment variables that were entered into the "env.py" file needed to be entered into Heroku into the "Config Vars" in the settings tab. 
+ - Finally I ensured that automatic deployments were selected in the Deploy tab on Heroku so that changes flowed through.
+
+Steps necessary for another user to deploy:
+- From your chosen developement enviroment
+- Install the requirements for this project found in the requirements.txt file
+- MongoDB will be needed for a database
+    - Create an account with Mongo
+    - Create the clusters for users,dish types and dishes
+    - The values of these clusters will be the data that feeds into the site
+- Enviroment variables will be needed in the developement enviroment
+    - Create an env.py file 
+    - Create a gitignore file and type "env.py" into that file to hide your enviroment variables
+    - Within the env.py this is where you can put your enviroment varialbes like I have above ("IP", "PORT", ""SECRET_KEY", "MONGO_URI", "MONGO_DBNAME")
+- Make a Procfile so Heroku knows the main app by using the command "python app.py > Procfile"
+- Over in Heroku setup an account and create an app with a unique name
+- Deploy your app on Github and then over on Heroku connect your Github repository within the deploy tab
+- Within Config Vars on Heroku place your enviroment variables that are stored in your env.py file. (They must be exact)
+- Make sure you push the requirements and the Procfile
+- Make sure you enable automatic deployment within the deploy tab on Heroku so that there are no differences between Gitub and Heroku
+- You will now be able to find the app URL and open the app in the top oright hand corner
 
 How to clone and deploy this project:
 - Navigate to the repository where the project is stored.
