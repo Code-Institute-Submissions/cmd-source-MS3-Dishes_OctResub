@@ -33,24 +33,24 @@
         <th class="center-align">Update/Delete</th>
       </tr>
       {% for dish in dishes %}
-      {% if dish.created_by == username %}
-      <tr>
-        <td class="center-align"><small>{{ dish.dish_type }}</small></td>
-        <td class="center-align"><small>{{ dish.dish_name }}</small></td>
-        <td class="center-align"><small><textarea disabled maxlength="500" id="profile_dish_description" name=""
-              rows="10" cols="150">{{ dish.dish_description }}</textarea></small></td>
-        <td class="center-align">
-          <div class="center-align">
-            <a href="{{url_for('update_dish', dish_id=dish._id)}}"
-              class="green btn center-align"><small>Update</small></a>
-            <br />
-            <br />
-            <a href="{{url_for('delete_dish', dish_id=dish._id)}}"
-              class="red btn center-align"><small>Delete</small></a>
-          </div>
-        </td>
-      </tr>
-      {% endif %}
+        {% if dish.created_by == username %}
+        <tr>
+          <td class="center-align"><small>{{ dish.dish_type }}</small></td>
+          <td class="center-align"><small>{{ dish.dish_name }}</small></td>
+          <td class="center-align"><small><textarea disabled maxlength="500" id="profile_dish_description" name=""
+                rows="10" cols="150">{{ dish.dish_description }}</textarea></small></td>
+          <td class="center-align">
+            <div class="center-align">
+              <a href="{{url_for('update_dish', dish_id=dish._id)}}"
+                class="green btn center-align"><small>Update</small></a>
+              <br />
+              <br />
+              <a href="{{url_for('delete_dish', dish_id=dish._id)}}"
+                class="red btn center-align"><small>Delete</small></a>
+            </div>
+          </td>
+        </tr>
+        {% endif %}
       {% endfor %}
     </div>
   </table>
