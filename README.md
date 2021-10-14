@@ -66,7 +66,8 @@ The other images are the utensils. These were all selected to give a very clean 
     ![carousel](static/img/carosel.PNG)
 
 
-- The profile page allows users to update or delete any previous recipies they have added.
+- The profile page allows users to update or delete any previous recipies they have added. 
+- There was an issue in updating the "type of dish" this has since been corrected.
 
     ![update](static/img/update_delete.PNG)
 
@@ -226,7 +227,7 @@ To deploy this project Heroku is needed for the backend, Github was used as a re
  - I setup the database MongoDB. From there I set up the collections which I used to store users,dish types and dishes added by users.
  - The values of the collections in MongoDB is what stores the information displayed on the site.
     -   For example the dish_type collection I have currently has the values "Chinese","Thai","Indian","Mexican","Irish","Other"
- - I then choose a connection method and connected by following the instructs MongoDB provides once clicking "connect" on the collection.
+ - I then choose a connection method and connected by following the instructions MongoDB provides once clicking "connect" on the collection.
  - Once this is done enviroment variables were needed. 
  - The enviroment vairables I used here are: "IP", "PORT", ""SECRET_KEY", "MONGO_URI", "MONGO_DBNAME"
  - I stored the enviroment variables in a file called "env.py" and then place that file in a ".gitignore" file. This ensured the enviroment variables are not pushed to Github for security reasons.
@@ -250,7 +251,7 @@ To deploy this project Heroku is needed for the backend, Github was used as a re
     - Create an env.py file 
     - Create a gitignore file and type "env.py" into that file to hide your enviroment variables
     - Within the env.py this is where you can put your enviroment varialbes like I have above ("IP", "PORT", ""SECRET_KEY", "MONGO_URI", "MONGO_DBNAME")
-- Make a Procfile so Heroku knows the main app by using the command "python app.py > Procfile"
+- Make a Procfile and a requirements file so Heroku knows the main app and whats needed to run the app with "pip3 freeze --local > requirements.txt" and "echo web: python app.py > Procfile"
 - Over in Heroku setup an account and create an app with a unique name
 - Deploy your app on Github and then over on Heroku connect your Github repository within the deploy tab
 - Within Config Vars on Heroku place your enviroment variables that are stored in your env.py file. (They must be exact)
