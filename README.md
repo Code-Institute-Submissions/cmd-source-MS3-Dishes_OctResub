@@ -255,7 +255,7 @@ To deploy this project Heroku is needed for the backend, Github was used as a re
 - Over in Heroku setup an account and create an app with a unique name
 - Deploy your app on Github and then over on Heroku connect your Github repository within the deploy tab
 - Within Config Vars on Heroku place your enviroment variables that are stored in your env.py file. (They must be exact)
-- Make sure you push the requirements and the Procfile
+- Make sure you push the requirements and the Procfile (git add requirements.txt, git add Procfile, git commit -m "adging requirements and Procfile, git push)
 - Make sure you enable automatic deployment within the deploy tab on Heroku so that there are no differences between Gitub and Heroku
 - You will now be able to find the app URL and open the app in the top oright hand corner
 
